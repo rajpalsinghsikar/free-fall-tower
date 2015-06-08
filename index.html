@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="js/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+<script src="js/drag_drop.js"></script>
+<script src="js/fft.js"></script>
+<script src="js/experimentsData.js"></script>
+    
+</head>
+
+<body ng-app="fft">
+<nav>
+<div id="leftObjects" class="objects" ondrop="drop(event)" ondragover="allowDrop(event)"  >
+<img src="images/football.png" draggable="true" ondragstart="drag(event)"  id="drag1" width="50" height="50">
+<img src="images/cottonball.png" draggable="true" ondragstart="drag(event)" id="drag2" width="50" height="50" >
+<img src="images/ironball.png" draggable="true" ondragstart="drag(event)" id="drag3" width="50" height="50"> 
+<img src="images/golfball.png" draggable="true" ondragstart="drag(event)" id="drag4" width="50" height="50">
+</div>
+
+<div id="rightObjects" class="objects" ondrop="drop(event)" ondragover="allowDrop(event)"  >
+<img src="images/football.png" draggable="true" ondragstart="drag(event)"  id="drag1" width="50" height="50">
+<img src="images/cottonball.png" draggable="true" ondragstart="drag(event)" id="drag2" width="50" height="50" >
+<img src="images/ironball.png" draggable="true" ondragstart="drag(event)" id="drag3" width="50" height="50"> 
+<img src="images/golfball.png" draggable="true" ondragstart="drag(event)" id="drag4" width="50" height="50">
+</div>
+
+
+    
+<br>
+</nav>
+    
+ <section>
+<div id="leftDestination" ondrop="drop(event)" ondragover="allowDrop(event)">
+</div>
+ <div ng-controller="massController" id="lMachine">
+     <img id="leftObj" class="image" src="images/footbal.png" draggable="true" ondragstart="drag(event)" width="{{lMass/10+50}}" height="{{lMass/10+50}}">
+     <img id="lWeighingMachine" class="machine"  src="images/scale.png" alt="lWeighingMachine">
+     <span id="leftMass" ng-bind="lMass"></span>
+     <br>
+     <input id="slider" type ="range" ng-model="lMass" min ="0" max="500" step ="50" value ="0"/>
+</div>
+     
+     
+     
+<div id="ruler">
+Medium:&nbsp;&nbsp;&nbsp;&nbsp;
+<div id="form">
+<input type="radio" name="env" value="air" checked>Air
+<input type="radio" name="env" value="vaccum">Vaccum
+    <button id="submit" type="submit" > Drop </button>
+</div>
+    <img id="rulerImage" src="images/ruler.png" alt="ruler" >
+    <canvas id="canvas" >
+    
+    </canvas>
+</div>
+
+     
+<div id="rightDestination" ondrop="drop(event)" ondragover="allowDrop(event)"> </div>   
+<div ng-controller="massController" id="rMachine">
+     <img id="rightObj" class="image" src="images/footbal.png" draggable="true" ondragstart="drag(event)" width="{{rMass/10+50}}" height="{{rMass/10+50}}">
+     <img id="rWeighingMachine" class="machine" src="images/scale.png" alt="rWeighingMachine">
+     <span id="rightMass" ng-bind="rMass"></span>
+     <br>
+     <input id="slider" type ="range" ng-model="rMass" min ="0" max="500" step ="50" value ="0"/>
+</div>
+    
+</section>
+
+<footer>
+<table id="table" ng-controller="getTableData">
+    <tr>
+        <th>Object Name</th>
+        <th>Mass</th>
+        <th>Environment</th>
+        <th>Time taken for the free fall</th>
+    </tr>
+    <tr ng-repeat="d in data">
+        <td>{{d}}</td>
+        <td>{{d[1]}}</td>
+        <td>{{d[2]}}</td>
+        <td>{{d[3]}}</td>
+    </tr>
+</table>
+</footer>
+    
+</body>
+</html>

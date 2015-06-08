@@ -1,0 +1,189 @@
+
+body{
+    background-color:#555555;
+}
+
+
+header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;	 
+}
+nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:100%;
+    float:left;
+    padding:5px;	      
+}
+section {
+    width:100%;
+    height: 100%;
+    float:left;
+    padding:10px;	 	 
+}
+footer {
+    color:black;
+    clear:both;
+    height:10px;
+    width: 100%
+    text-align:center;
+    padding:1px;
+    border-collapse: collapse;
+}
+
+
+
+img.machine{
+    width:150px;
+    height:150px; 
+}
+
+
+#leftObjects
+{
+    float:left; 
+}
+#rightObjects
+{
+    float:right; 
+}
+
+.objects{
+    width:104px;
+    height:105px; 
+    margin:10px;padding:10px;
+    border:1px solid #aaaaaa;
+}
+
+#leftDestination
+{
+    position: absolute;
+    top:275px;
+    left:75px;
+    width:50px;
+    height:50px; 
+    margin:10px;padding:10px;
+    border:1px solid #aaaaaa;
+}
+
+
+#rightDestination
+{
+    position: absolute;
+    top:275px;
+    right:70px;
+    width:50px;
+    height:50px; 
+    margin:10px;padding:10px;
+    border:1px solid #aaaaaa;
+}
+
+
+
+#slider{
+    width: 200px;
+    height: 10px;
+}
+
+#WeighingMachine{
+    width: 150px;
+    height: 150px;   
+}
+
+
+#leftMass {
+position: absolute;
+left: 70px;
+top: 320px;
+}
+
+#rightMass {
+position: absolute;
+left: 800px;
+top: 200px;
+}
+
+#lMachine{
+float: left;
+
+}
+#rMachine{
+float: right;
+}
+
+
+#ruler {
+    position: fixed;
+    top: 20px;
+    left: 45%;
+    width: 150px;
+    height: 206px;
+        background-size: 80px 60px;
+}
+
+#rulerImage{
+width:100px;
+height:200%;
+}
+
+#form{
+
+}
+#ruler form.button{
+width: 200px; height : 60px;}
+
+
+#canvas{
+    position: fixed;
+    top: 100px;
+    left: 29%;
+    width:600px;
+    height:410px;
+    background:rgba(234,45,23,0.4);
+}
+
+#submit{
+    width:100px;
+    height:30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: blue;
+}
+
+
+#table{
+    width:100%;
+    height:100%;
+    border: 2;
+}
+
+#table th {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+table td {
+    border: 2px solid green;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+
+#foot-ball
+{
+    background-image: url(../images/football.png);
+}
+#cotton-ball
+{
+    background-image: url(../images/cottonball.png);
+}
+#iron-ball
+{
+    background-image: url(../images/ironball.png);
+}
+#golf-ball
+{
+    background-image: url(../images/golfball.png);
+}
