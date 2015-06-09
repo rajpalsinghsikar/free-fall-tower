@@ -45,11 +45,17 @@ img.machine{
 
 #leftObjects
 {
-    float:left; 
+    position: fixed;
+    float:left;
+    top:15px;
+    left:40px;  
 }
 #rightObjects
 {
-    float:right; 
+    position: fixed;
+    float:right;
+    top:15px;
+    right:40px;    
 }
 
 .objects{
@@ -64,7 +70,7 @@ img.machine{
 {
     position: absolute;
     top:275px;
-    left:75px;
+    left:50px;
     width:50px;
     height:50px; 
     margin:10px;padding:10px;
@@ -76,7 +82,27 @@ img.machine{
 {
     position: absolute;
     top:275px;
-    right:70px;
+    right:30px;
+    width:50px;
+    height:50px; 
+    margin:10px;padding:10px;
+    border:1px solid #aaaaaa;
+}
+
+#leftFinDestination{
+    position: fixed;
+    top:30px;
+    left:450px;
+    width:50px;
+    height:50px; 
+    margin:10px;padding:10px;
+    border:1px solid #990000;
+}
+
+#rightFinDestination{
+    position: fixed;
+    top:0px;
+    left:780px;
     width:50px;
     height:50px; 
     margin:10px;padding:10px;
@@ -86,7 +112,7 @@ img.machine{
 
 
 #slider{
-    width: 200px;
+    width: 150px;
     height: 10px;
 }
 
@@ -98,14 +124,18 @@ img.machine{
 
 #leftMass {
 position: absolute;
-left: 70px;
-top: 320px;
+left: 80px;
+top: 440px;
+color: red;
+font-size: 25px;
 }
 
 #rightMass {
 position: absolute;
-left: 800px;
-top: 200px;
+right: 70px;
+top: 440px;
+color: red;
+font-size: 25px;
 }
 
 #lMachine{

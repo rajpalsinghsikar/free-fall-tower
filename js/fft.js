@@ -1,12 +1,7 @@
-angular.module("fft", ["experimentsData"])
-.controller("massController", function($scope){
-    $scope.lMass=10;
-    $scope.rMass=10;
+angular.module("fft", []).controller("massController", function($scope){
+    $scope.lMass=0;
+    $scope.rMass=0;
+    var target = document.getElementById("drop-target");
+    console.log(target);
 });
 
-
-.controller("getTD", function ($scope) {
-    $scope.data = [];
-    data.push("{\"Object Name\", \"Mass\", \"Environment\", \"Time taken for the free fall\"}");
-    data.push("foot-ball","$scope.lMass","Air", "20sec");
-});

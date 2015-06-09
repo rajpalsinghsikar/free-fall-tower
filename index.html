@@ -18,12 +18,17 @@
 <img src="images/ironball.png" draggable="true" ondragstart="drag(event)" id="drag3" width="50" height="50"> 
 <img src="images/golfball.png" draggable="true" ondragstart="drag(event)" id="drag4" width="50" height="50">
 </div>
-
+    
+    
+    <div id="leftFinDestination" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <div id="rightFinDestination" ondrop="drop(event)" ondragover="allowDrop(event)">
+    
+    
 <div id="rightObjects" class="objects" ondrop="drop(event)" ondragover="allowDrop(event)"  >
-<img src="images/football.png" draggable="true" ondragstart="drag(event)"  id="drag1" width="50" height="50">
-<img src="images/cottonball.png" draggable="true" ondragstart="drag(event)" id="drag2" width="50" height="50" >
-<img src="images/ironball.png" draggable="true" ondragstart="drag(event)" id="drag3" width="50" height="50"> 
-<img src="images/golfball.png" draggable="true" ondragstart="drag(event)" id="drag4" width="50" height="50">
+<img src="images/football.png" draggable="true" ondragstart="drag(event)"  id="drag11" width="50" height="50">
+<img src="images/cottonball.png" draggable="true" ondragstart="drag(event)" id="drag22" width="50" height="50" >
+<img src="images/ironball.png" draggable="true" ondragstart="drag(event)" id="drag33" width="50" height="50"> 
+<img src="images/golfball.png" draggable="true" ondragstart="drag(event)" id="drag44" width="50" height="50">
 </div>
 
 
@@ -35,7 +40,6 @@
 <div id="leftDestination" ondrop="drop(event)" ondragover="allowDrop(event)">
 </div>
  <div ng-controller="massController" id="lMachine">
-     <img id="leftObj" class="image" src="images/footbal.png" draggable="true" ondragstart="drag(event)" width="{{lMass/10+50}}" height="{{lMass/10+50}}">
      <img id="lWeighingMachine" class="machine"  src="images/scale.png" alt="lWeighingMachine">
      <span id="leftMass" ng-bind="lMass"></span>
      <br>
@@ -46,6 +50,7 @@
      
 <div id="ruler">
 Medium:&nbsp;&nbsp;&nbsp;&nbsp;
+
 <div id="form">
 <input type="radio" name="env" value="air" checked>Air
 <input type="radio" name="env" value="vaccum">Vaccum
@@ -60,7 +65,6 @@ Medium:&nbsp;&nbsp;&nbsp;&nbsp;
      
 <div id="rightDestination" ondrop="drop(event)" ondragover="allowDrop(event)"> </div>   
 <div ng-controller="massController" id="rMachine">
-     <img id="rightObj" class="image" src="images/footbal.png" draggable="true" ondragstart="drag(event)" width="{{rMass/10+50}}" height="{{rMass/10+50}}">
      <img id="rWeighingMachine" class="machine" src="images/scale.png" alt="rWeighingMachine">
      <span id="rightMass" ng-bind="rMass"></span>
      <br>
