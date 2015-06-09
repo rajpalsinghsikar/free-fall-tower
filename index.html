@@ -2,15 +2,13 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <script src="js/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+<script>var droppedObj; </script>
 <script src="js/drag_drop.js"></script>
-<script src="js/fft.js"></script>
-<script src="js/experimentsData.js"></script>
+<script src="js/slider.js"></script>
     
 </head>
 
-<body ng-app="fft">
+<body>
 <nav>
 <div id="leftObjects" class="objects" ondrop="drop(event)" ondragover="allowDrop(event)"  >
 <img src="images/football.png" draggable="true" ondragstart="drag(event)"  id="drag1" width="50" height="50">
@@ -32,18 +30,18 @@
 </div>
 
 
-    
 <br>
 </nav>
     
  <section>
 <div id="leftDestination" ondrop="drop(event)" ondragover="allowDrop(event)">
 </div>
- <div ng-controller="massController" id="lMachine">
+ <div id="lMachine">
      <img id="lWeighingMachine" class="machine"  src="images/scale.png" alt="lWeighingMachine">
-     <span id="leftMass" ng-bind="lMass"></span>
      <br>
-     <input id="slider" type ="range" ng-model="lMass" min ="0" max="500" step ="50" value ="0"/>
+<!--     <input id="slider" type="range" min="0" max="500" step="50" value ="0" onchange="leftMass.value=value" >-->
+     <input id="slider" type="range" min="0" max="500" step="50" value ="0" onchange="sliderChange(value)" >
+     <output id="leftMass">0</output>
 </div>
      
      
@@ -64,24 +62,25 @@ Medium:&nbsp;&nbsp;&nbsp;&nbsp;
 
      
 <div id="rightDestination" ondrop="drop(event)" ondragover="allowDrop(event)"> </div>   
-<div ng-controller="massController" id="rMachine">
+<div id="rMachine">
      <img id="rWeighingMachine" class="machine" src="images/scale.png" alt="rWeighingMachine">
-     <span id="rightMass" ng-bind="rMass"></span>
      <br>
-     <input id="slider" type ="range" ng-model="rMass" min ="0" max="500" step ="50" value ="0"/>
+     <input id="slider" type ="range" min ="0" max="500" step ="50" value ="0" onchange="sliderChange(value)" />
+     <output id="rightMass">0</output>
 </div>
     
 </section>
 
 <footer>
-<table id="table" ng-controller="getTableData">
+<br>
+<table id="table">
     <tr>
         <th>Object Name</th>
         <th>Mass</th>
         <th>Environment</th>
         <th>Time taken for the free fall</th>
     </tr>
-    <tr ng-repeat="d in data">
+    <tr >
         <td>{{d}}</td>
         <td>{{d[1]}}</td>
         <td>{{d[2]}}</td>

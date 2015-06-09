@@ -92,7 +92,7 @@ img.machine{
 #leftFinDestination{
     position: fixed;
     top:30px;
-    left:450px;
+    left:30%;
     width:50px;
     height:50px; 
     margin:10px;padding:10px;
@@ -102,7 +102,7 @@ img.machine{
 #rightFinDestination{
     position: fixed;
     top:0px;
-    left:780px;
+    right:30%;
     width:50px;
     height:50px; 
     margin:10px;padding:10px;
@@ -132,7 +132,7 @@ font-size: 25px;
 
 #rightMass {
 position: absolute;
-right: 70px;
+right: 60px;
 top: 440px;
 color: red;
 font-size: 25px;
@@ -218,4 +218,22 @@ table td {
 #golf-ball
 {
     background-image: url(../images/golfball.png);
+}
+
+
+
+
+#leftFinDestination {
+    width: 50px;
+    height: 50px;
+    background: red;
+    position: relative;
+    -webkit-animation: mymove 5s farward; /* Chrome, Safari, Opera */
+    animation: mymove 5s ;
+    animation-fill-mode: forwards;
+}
+
+@keyframes mymove {
+    from {top: 0px;}
+    to {top: 420px;}
 }
