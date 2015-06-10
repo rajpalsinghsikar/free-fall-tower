@@ -5,7 +5,8 @@
 <script>var droppedObj; </script>
 <script src="js/drag_drop.js"></script>
 <script src="js/slider.js"></script>
-    
+<script src="js/canvas.js"></script>
+
 </head>
 
 <body>
@@ -52,12 +53,12 @@ Medium:&nbsp;&nbsp;&nbsp;&nbsp;
 <div id="form">
 <input type="radio" name="env" value="air" checked>Air
 <input type="radio" name="env" value="vaccum">Vaccum
-    <button id="submit" type="submit" > Drop </button>
+<!--    <button id="submit" type="button"  onclick="drop();"> Drop </button>-->
+    <input id="submit"  type="button" value="Click Me" onclick="dropObject();" />
 </div>
     <img id="rulerImage" src="images/ruler.png" alt="ruler" >
     <canvas id="canvas" >
-    
-    </canvas>
+   </canvas>
 </div>
 
      

@@ -1,0 +1,327 @@
+
+<STYLE>
+DIV.scrollTableALL{
+ clear: both;
+ overflow: AUTO;
+ width: 580px;
+ height: 300px;
+ POSITION: relative;
+ color:black;
+}
+DIV.scrollTableALL thead td, tfoot td {
+ background-color: #1B82E6;
+ Z-INDEX: 60;
+ position:relative;
+}
+DIV.scrollTableALL table{
+ border:0px;
+ cellspacing:1px;
+ cellpading:1px;
+ TEXT-ALIGN: center;
+}
+
+DIV.scrollTableALL thead td{
+ TOP: expression(this.offsetParent.scrollTop -2);
+}
+DIV.scrollTableALL tfoot td{
+ TOP: expression(this.offsetParent.clientHeight + this.offsetParent.scrollTop - (this.offsetParent.scrollHeight -2));
+}
+
+tr.odd{
+ background-color:#FFFFFF;
+}
+tr.even{
+ background-color:#D2E9FF;
+}
+
+th.fixedLeftALL, td.fixedLeftALL {
+ z-index: 60;
+ border-right: 1px solid silver;
+ border-left: 1px solid silver;
+ LEFT: expression(this.offsetParent.scrollLeft -1);
+ POSITION: relative;
+}
+th.fixedRightALL, td.fixedRightALL {
+ z-index: 60;
+ border-right: 1px solid silver;
+ border-left: 1px solid silver;
+ LEFT: expression(this.offsetParent.clientWidth - this.offsetParent.scrollWidth + this.offsetParent.scrollLeft +1); 
+ POSITION: relative;
+}
+
+
+html>body div.scrollTableALL {
+overflow: hidden;
+}
+html>body tbody.scrollBodyALL {
+height: 200px;
+overflow: auto;
+}
+</style>
+
+<div class="scrollTableALL" id = "scrollTableALL">
+<table id="TableALL" width="100%"> 
+<thead class="scrollHeadALL" id="scrollHeadALL">
+<tr>
+<td class="fixedLeftALL" style="z-index:80;">first-column</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td class="fixedRightALL" style="z-index:80;">Last-column</td>
+<!--[if !IE]><!-->
+<td width="14px"> </td>
+<!--<![endif]-->
+</tr>
+</thead>
+<tbody class="scrollBodyALL" id="scrollBodyALL">
+<tr style="background-color:#D2E9FF">
+<td class="fixedLeftALL">first-column</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td class="fixedRightALL">Last-column</td>
+</tr>
+<tr style="background-color:#FFFFFF">
+<td class="fixedLeftALL">first-column</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td class="fixedRightALL">Last-column</td>
+</tr>
+<tr style="background-color:#D2E9FF">
+<td class="fixedLeftALL">first-column</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td class="fixedRightALL">Last-column</td>
+</tr>
+<tr style="background-color:#FFFFFF">
+<td class="fixedLeftALL">first-column</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td class="fixedRightALL">Last-column</td>
+</tr>
+<tr style="background-color:#D2E9FF">
+<td class="fixedLeftALL">first-column</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td class="fixedRightALL">Last-column</td>
+</tr>
+<tr style="background-color:#FFFFFF">
+<td class="fixedLeftALL">first-column</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td class="fixedRightALL">Last-column</td>
+</tr>
+<tr style="background-color:#D2E9FF">
+<td class="fixedLeftALL">first-column</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td class="fixedRightALL">Last-column</td>
+</tr>
+<tr style="background-color:#FFFFFF">
+<td class="fixedLeftALL">first-column</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td class="fixedRightALL">Last-column</td>
+</tr>
+<tr style="background-color:#D2E9FF">
+<td class="fixedLeftALL">first-column</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td class="fixedRightALL">Last-column</td>
+</tr>
+<tr style="background-color:#FFFFFF">
+<td class="fixedLeftALL">first-column</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td class="fixedRightALL">Last-column</td>
+</tr>
+<tr style="background-color:#D2E9FF">
+<td class="fixedLeftALL">first-column</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td class="fixedRightALL">Last-column</td>
+</tr>
+<tr style="background-color:#FFFFFF">
+<td class="fixedLeftALL">first-column</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td class="fixedRightALL">Last-column</td>
+</tr>
+<tr style="background-color:#D2E9FF">
+<td class="fixedLeftALL">first-column</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td class="fixedRightALL">Last-column</td>
+</tr>
+<tr style="background-color:#FFFFFF">
+<td class="fixedLeftALL">first-column</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td class="fixedRightALL">Last-column</td>
+</tr>
+<tr style="background-color:#D2E9FF">
+<td class="fixedLeftALL">first-column</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td class="fixedRightALL">Last-column</td>
+</tr>
+<tr style="background-color:#FFFFFF">
+<td class="fixedLeftALL">first-column</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td class="fixedRightALL">Last-column</td>
+</tr>
+<tr style="background-color:#D2E9FF">
+<td class="fixedLeftALL">first-column</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td class="fixedRightALL">Last-column</td>
+</tr>
+<tr style="background-color:#FFFFFF">
+<td class="fixedLeftALL">first-column</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td class="fixedRightALL">Last-column</td>
+</tr>
+</tbody>
+<tfoot class="scrollFooterALL" id="scrollFooterALL"><tr>
+<tr>
+<td class="fixedLeftALL">first-column</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td>second</td>
+<td class="fixedRightALL">Last-column</td>
+<!--[if !IE]><!-->
+<td width="14px"> </td>
+<!--<![endif]-->
+</tr>
+</tr></tfoot>
+
+</table>
+</div>
+<script>
+var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome')> -1;
+if(is_chrome){
+document.getElementById('scrollHeadALL').style.display ="block";
+document.getElementById('scrollBodyALL').style.display ="block";
+document.getElementById('scrollFooterALL').style.display ="block";
+document.getElementById('scrollTableALL').style.width ="540px";
+}
+</script>

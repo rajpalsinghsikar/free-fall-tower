@@ -1,30 +1,80 @@
-//document.getElementById("submit").onclick = function fun(){
-var can = document.getElementById('canvas');
-var ctx = can.getContext('2d');
-var x = 100, y = 10;
-ctx.fillStyle = "black";
-ctx.fillRect(700, 100, 100, 100);
-/*var imageObj = new Image();
-imageObj.src='images/ruler.png';
-ctx.drawImage(imageObj, 10, 10);*/
-draw();
-//}
-function draw() {
-    //          java.lang.Thread.sleep(2000);
-//    sleepFor(100);
-    ctx.beginPath();
-    ctx.arc(x, y, 20, 0, 2 * Math.PI);
-    ctx.fillStyle = 'rgba(50,100,200,0.9)';
-    ctx.fill();
-    y += 2;
-    if (y>=400)
-        return;
-    ctx.fillStyle = "rgba(34,45,223,0.9)";
-    ctx.fillRect(0, 0, can.width, can.height);
-    requestAnimationFrame(draw);
-    //ctx.clearRect(0,0,can.width,can.height);
-    }
-function sleepFor( sleepDuration ){
-    var now = new Date().getTime();
-    while(new Date().getTime() < now + sleepDuration){ /* do nothing */ } 
+var imgObj = null;
+var imgObjRight = null;
+
+
+function init(){
+    imgObj = document.getElementById('leftFinDestination');
+    imgObj.style.position= 'relative'; 
+    imgObj.style.top = '15px';
+    imgObjRight = document.getElementById('rightFinDestination');
+    imgObjRight.style.position= 'fixed'; 
+    imgObjRight.style.top = '0px';    
+    imgObjRight.style.right = '500px'; 
+
 }
+function moveDown(){
+    if(parseInt(imgObj.style.top)<421)
+        {
+        console.log("in l");
+        imgObj.style.top = parseInt(imgObj.style.top) + speed + 'px';
+        setTimeout(moveDown,60);
+        }
+}
+
+function moveDownRight(){
+    if(parseInt(imgObjRight.style.top)<420)
+        {
+        console.log("in r");
+        imgObjRight.style.top = parseInt(imgObjRight.style.top) + speedRight + 'px';
+        setTimeout(moveDownRight,60);
+        }
+}
+var speedRight;
+var speed;
+window.onload =init;
+
+function dropObject(){
+    speed=5;
+    speedRight=2;
+    moveDown();
+    moveDownRight();
+    var btn=document.getElementById("submit");
+    btn.value="reset";
+    btn.onclick=doRestore;
+}
+
+
+function doRestore(){
+    console.log("imgObj: "+imgObj);
+    console.log(elementChildren(imgObj)[1]);
+    console.log("woh: "+imgObj.childNodes[1][0]);
+    document.getElementById('leftObjects').appendChild(elementChildren(imgObj)[1]);
+    document.getElementById('rightObjects').appendChild(elementChildren(imgObjRight)[2]);
+
+    console.log(elementChildren(imgObjRight));
+    imgObj.width="50px";
+    imgObj.height="50px";
+    imgObj.style.top = '15px';
+
+    imgObjRight.style.width="50px";
+    imgObjRight.style.height="50px";
+    imgObjRight.style.top = '0px';
+    var btn=document.getElementById("submit").value="reset";
+}
+
+
+
+function elementChildren (element) {
+    var childNodes = element.childNodes,
+        children = [],
+        i = childNodes.length;
+    
+    while (i--) {
+        if (childNodes[i].nodeType == 1) {
+            children.unshift(childNodes[i]);
+        }
+    }
+
+    return children;
+}
+
