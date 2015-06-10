@@ -10,15 +10,20 @@
 //
 //
 
-function sliderChange(value){
+function sliderChange(status , value){
 //var i = document.getElementById("slider").value;
 console.log("value: "+value);
-
-var ld = document.getElementById("leftDestination");
-console.log("ld: "+ld);
-    
-document.getElementById("leftMass").value=value;
-//var droppedObj=getLocalData("getLocalData");
+if (status===0){
+    var ld = document.getElementById("leftDestination");
+    console.log("ld: "+ld);
+    document.getElementById("leftMass").value=value;
+    }
+else if(status===1){
+    var ld = document.getElementById("rightDestination");
+    console.log("ld: "+ld);
+    document.getElementById("rightMass").value=value;
+    }
+    //var droppedObj=getLocalData("getLocalData");
 console.log("op: "+document.getElementById(droppedObj));
 
 var droppedImg = document.getElementById(droppedObj);

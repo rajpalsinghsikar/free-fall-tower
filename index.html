@@ -6,6 +6,7 @@
 <script src="js/drag_drop.js"></script>
 <script src="js/slider.js"></script>
 <script src="js/canvas.js"></script>
+<script src="js/experimentsData.js"></script>
 
 </head>
 
@@ -41,7 +42,7 @@
      <img id="lWeighingMachine" class="machine"  src="images/scale.png" alt="lWeighingMachine">
      <br>
 <!--     <input id="slider" type="range" min="0" max="500" step="50" value ="0" onchange="leftMass.value=value" >-->
-     <input id="slider" type="range" min="0" max="500" step="50" value ="0" onchange="sliderChange(value)" >
+     <input id="slider" type="range" min="0" max="500" step="50" value ="0" onchange="sliderChange(0,value)" >
      <output id="leftMass">0</output>
 </div>
      
@@ -66,7 +67,7 @@ Medium:&nbsp;&nbsp;&nbsp;&nbsp;
 <div id="rMachine">
      <img id="rWeighingMachine" class="machine" src="images/scale.png" alt="rWeighingMachine">
      <br>
-     <input id="slider" type ="range" min ="0" max="500" step ="50" value ="0" onchange="sliderChange(value)" />
+     <input id="slider" type ="range" min ="0" max="500" step ="50" value ="0" onchange="sliderChange(1,value)" />
      <output id="rightMass">0</output>
 </div>
     
