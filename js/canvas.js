@@ -19,6 +19,13 @@ function moveDown(){
         imgObj.style.top = parseInt(imgObj.style.top) + speed + 'px';
         setTimeout(moveDown,60);
         }
+    else
+        {
+        console.log("obj: "+elementChildren(imgObj)[1].src.substring(30,elementChildren(imgObj)[1].src.length-4));
+        console.log("mass: "+document.getElementById("sliderLeft").value);
+
+        console.log("env: "+getEnv());
+        }
 }
 
 function moveDownRight(){
@@ -28,6 +35,11 @@ function moveDownRight(){
         imgObjRight.style.top = parseInt(imgObjRight.style.top) + speedRight + 'px';
         setTimeout(moveDownRight,60);
         }
+    else{
+        console.log(elementChildren(imgObjRight)[2].src.substring(30,elementChildren(imgObj)[1].src.length-4));
+        console.log("mass: "+document.getElementById("sliderRight").value);
+        console.log("env: "+getEnv());
+    }
 }
 var speedRight;
 var speed;
@@ -35,7 +47,7 @@ window.onload =init;
 
 function dropObject(){
     speed=5;
-    speedRight=2;
+    speedRight=6;
     moveDown();
     moveDownRight();
     var btn=document.getElementById("submit");
@@ -48,18 +60,21 @@ function doRestore(){
     console.log("imgObj: "+imgObj);
     console.log(elementChildren(imgObj)[1]);
     console.log("woh: "+imgObj.childNodes[1][0]);
-    document.getElementById('leftObjects').appendChild(elementChildren(imgObj)[1]);
-    document.getElementById('rightObjects').appendChild(elementChildren(imgObjRight)[2]);
-
-    console.log(elementChildren(imgObjRight));
-    imgObj.width="50px";
-    imgObj.height="50px";
-    imgObj.style.top = '15px';
-
+    elementChildren(imgObj)[1].width="50px";
+    elementChildren(imgObj)[1].height="50px";
     imgObjRight.style.width="50px";
     imgObjRight.style.height="50px";
+    if(elementChildren(imgObj)[1] || elementChildren(imgObjRight)[2])
+        {
+        document.getElementById('leftObjects').appendChild(elementChildren(imgObj)[1]);
+        document.getElementById('rightObjects').appendChild(elementChildren(imgObjRight)[2]);
+        }
+    console.log(elementChildren(imgObjRight));
+
+    imgObj.style.top = '15px';
+
     imgObjRight.style.top = '0px';
-    var btn=document.getElementById("submit").value="reset";
+    var btn=document.getElementById("submit").value="Drop";
 }
 
 
@@ -78,3 +93,14 @@ function elementChildren (element) {
     return children;
 }
 
+
+function getEnv(){
+    var env;
+    if (document.getElementById('r1').checked){
+        env = document.getElementById('r1').value;
+    }
+    if (document.getElementById('r2').checked){
+        env = document.getElementById('r2').value;
+    }
+    return env;
+}
