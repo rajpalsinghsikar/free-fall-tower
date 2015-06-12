@@ -87,6 +87,9 @@ function doRestore(){
     document.getElementById("drag22").setAttribute("draggable", true);
     document.getElementById("drag33").setAttribute("draggable", true);
     document.getElementById("drag44").setAttribute("draggable", true);
+    console.log("in restore...");
+    var btn=document.getElementById("submit");
+    btn.onclick=dropObject;
 }
 
 
