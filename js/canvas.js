@@ -26,7 +26,12 @@ function moveDown(){
 //        console.log("env: "+getEnv());
         var el=elementChildren(imgObj)[1].src.substring(30,elementChildren(imgObj)[1].src.length-4);
         var mass=document.getElementById("sliderLeft").value;
-        printExperimentData(el, mass, getEnv(), 10);
+        var timeTaken;
+        if(speed===speedRight)
+            timeTaken=Math.sqrt((2*15)/9.8);
+        else
+            timeTaken=Math.sqrt(((2*15*10)/(9.8*speed)));
+        printExperimentData(el, mass, getEnv(), timeTaken.toFixed(2));
         document.getElementById("submit").value="Reset";
         document.getElementById("submit").disabled=false;
         document.getElementById('r1').disabled=false;
@@ -47,15 +52,20 @@ function moveDownRight(){
         var el=elementChildren(imgObjRight)[1].src.substring(30,elementChildren(imgObj)[1].src.length-4);
 //        console.log("err: "+elementChildren(imgObjRight)[1]);
         var mass=document.getElementById("sliderRight").value;
-        printExperimentData(el, mass, getEnv(), 10);
+        var timeTaken;
+        if(speed===speedRight)
+            timeTaken=Math.sqrt((2*15)/9.8);
+        else
+            timeTaken=Math.sqrt(((2*15*10)/(9.8*speedRight)));
+        printExperimentData(el, mass, getEnv(), timeTaken.toFixed(2));
     }
 }
 
 window.onload =init;
 
 function dropObject(){
-    speed=5;
-    speedRight=6;
+
+    setSpeed();
     moveDown();
     moveDownRight();
     document.getElementById('r1').disabled=true;
@@ -63,6 +73,24 @@ function dropObject(){
     var btn=document.getElementById("submit");
     btn.disabled=true;
     btn.onclick=doRestore;
+    
+}
+
+
+function setSpeed(){
+//    var time Math.sqrt();
+    if(document.getElementById('r2').checked)
+        {
+        speed=5;
+        speedRight=5;
+        }
+    else
+        {
+        var massL=document.getElementById("sliderLeft").value;
+        var massR=document.getElementById("sliderRight").value;
+        speed=massL/100;
+        speedRight=massR/100;
+        }
     
 }
 
