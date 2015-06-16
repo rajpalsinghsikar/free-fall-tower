@@ -38,8 +38,30 @@ function drop(ev) {
     }
     else
     {;}
-  droppedObj=data;
-  setLocalData("droppedObj", document.getElementById(data));
+    droppedObj=data;
+    if((document.getElementById("leftFinDestination").childNodes[0]===undefined) && (document.getElementById("rightFinDestination").childNodes[0]===undefined))
+        document.getElementById("submit").disabled=true;
+    else
+        document.getElementById("submit").disabled=false;
+    
+    if(document.getElementById("leftDestination").childNodes[1]===undefined)
+        {
+        document.getElementById("sliderLeft").disabled=true;
+  //      document.getElementById("sliderLeft").value=0;
+        document.getElementById("leftMass").value=0;
+        }
+    else
+        document.getElementById("sliderLeft").disabled=false;
+    if(document.getElementById("rightDestination").childNodes[1]===undefined)
+        {
+        document.getElementById("sliderRight").disabled=true;
+//        document.getElementById("sliderRight").value=0;
+        document.getElementById("rightMass").value=0;
+        }
+    else
+        document.getElementById("sliderRight").disabled=false;
+    
+        
 }
 
 

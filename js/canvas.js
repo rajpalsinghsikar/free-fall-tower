@@ -4,6 +4,15 @@ var speedRight=1;
 var speed=1;
 
 function init(){
+    document.getElementById("submit").disabled=true;
+    document.getElementById("sliderLeft").value=0;
+    document.getElementById("leftMass").value=document.getElementById("sliderLeft").value; 
+    document.getElementById("sliderRight").value=0;
+    document.getElementById("rightMass").value=document.getElementById("sliderRight").value; 
+    document.getElementById("sliderLeft").disabled=true;
+    document.getElementById("sliderRight").disabled=true;
+
+    
     imgObj = document.getElementById('leftFinDestination');
 //    imgObj.style.position= 'relative'; 
     imgObj.style.top = '15px';
@@ -130,6 +139,13 @@ document.getElementById("rightFinDestination").childNodes[0].style.cssText="heig
     document.getElementById("drag33").setAttribute("draggable", true);
     document.getElementById("drag44").setAttribute("draggable", true);
     console.log("in restore...");
+    
+    document.getElementById("submit").disabled=true;
+    document.getElementById("sliderLeft").value=0;
+    document.getElementById("leftMass").value=document.getElementById("sliderLeft").value; 
+    document.getElementById("sliderRight").value=0;
+    document.getElementById("rightMass").value=document.getElementById("sliderRight").value; 
+    
     var btn=document.getElementById("submit");
     btn.onclick=dropObject;
 }
