@@ -24,7 +24,7 @@ function moveDown(){
 //        console.log("obj: "+elementChildren(imgObj)[1].src.substring(30,elementChildren(imgObj)[1].src.length-4));
 //        console.log("mass: "+document.getElementById("sliderLeft").value);
 //        console.log("env: "+getEnv());
-        var el=elementChildren(imgObj)[1].src.substring(30,elementChildren(imgObj)[1].src.length-4);
+        var el=elementChildren(imgObj)[0].src.substring(30,elementChildren(imgObj)[0].src.length-4);
         var mass=document.getElementById("sliderLeft").value;
         var timeTaken;
         if(speed===speedRight)
@@ -49,7 +49,7 @@ function moveDownRight(){
 //        console.log(elementChildren(imgObjRight)[2].src.substring(30,elementChildren(imgObj)[1].src.length-4));
 //        console.log("mass: "+document.getElementById("sliderRight").value);
 //        console.log("env: "+getEnv());
-        var el=elementChildren(imgObjRight)[1].src.substring(30,elementChildren(imgObj)[1].src.length-4);
+        var el=elementChildren(imgObjRight)[0].src.substring(30,elementChildren(imgObj)[0].src.length-4);
 //        console.log("err: "+elementChildren(imgObjRight)[1]);
         var mass=document.getElementById("sliderRight").value;
         var timeTaken;
@@ -58,6 +58,10 @@ function moveDownRight(){
         else
             timeTaken=Math.sqrt(((2*15*10)/(9.8*speedRight)));
         printExperimentData(el, mass, getEnv(), timeTaken.toFixed(2));
+        document.getElementById("submit").value="Reset";
+        document.getElementById("submit").disabled=false;
+        document.getElementById('r1').disabled=false;
+        document.getElementById('r2').disabled=false;
     }
 }
 
@@ -88,8 +92,8 @@ function setSpeed(){
         {
         var massL=document.getElementById("sliderLeft").value;
         var massR=document.getElementById("sliderRight").value;
-        speed=massL/100;
-        speedRight=massR/100;
+        speed=(massL/100)+1;
+        speedRight=(massR/100)+1;
         }
     
 }
@@ -97,16 +101,19 @@ function setSpeed(){
 
 function doRestore(){
     console.log("imgObj: "+imgObj);
-    console.log(elementChildren(imgObj)[1]);
-    console.log("woh: "+imgObj.childNodes[1][0]);
+    console.log(elementChildren(imgObj)[0]);
+    console.log("woh: "+imgObj.childNodes[0]);
 //    elementChildren(imgObj)[1].style.width="50px";
 //    elementChildren(imgObj)[1].style.height="50px";
 //    imgObjRight.style.width="50px";
 //    imgObjRight.style.height="50px";
-    if(elementChildren(imgObj)[1] || elementChildren(imgObjRight)[2])
+document.getElementById("leftFinDestination").childNodes[0].style.cssText="height: 50px; width: 50px;"
+document.getElementById("rightFinDestination").childNodes[0].style.cssText="height: 50px; width: 50px;"
+
+    if(elementChildren(imgObj)[0] || elementChildren(imgObjRight)[0])
         {
-        document.getElementById('leftObjects').appendChild(elementChildren(imgObj)[1]);
-        document.getElementById('rightObjects').appendChild(elementChildren(imgObjRight)[1]);
+        document.getElementById('leftObjects').appendChild(elementChildren(imgObj)[0]);
+        document.getElementById('rightObjects').appendChild(elementChildren(imgObjRight)[0]);
         }
     console.log("hel: "+elementChildren(imgObjRight));
 
