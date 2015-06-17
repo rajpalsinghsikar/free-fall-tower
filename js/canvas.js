@@ -15,10 +15,10 @@ function init(){
     
     imgObj = document.getElementById('leftFinDestination');
 //    imgObj.style.position= 'relative'; 
-    imgObj.style.top = '15px';
+    imgObj.style.top = '70px';
     imgObjRight = document.getElementById('rightFinDestination');
 //    imgObjRight.style.position= 'fixed'; 
-    imgObjRight.style.top = '15px';    
+    imgObjRight.style.top = '70px';    
 //    imgObjRight.style.right = '500px'; 
 
 }
@@ -58,7 +58,7 @@ function moveDownRight(){
 //        console.log(elementChildren(imgObjRight)[2].src.substring(30,elementChildren(imgObj)[1].src.length-4));
 //        console.log("mass: "+document.getElementById("sliderRight").value);
 //        console.log("env: "+getEnv());
-        var el=elementChildren(imgObjRight)[0].src.substring(30,elementChildren(imgObj)[0].src.length-4);
+        var el=elementChildren(imgObjRight)[0].src.substring(30,elementChildren(imgObjRight)[0].src.length-4);
 //        console.log("err: "+elementChildren(imgObjRight)[1]);
         var mass=document.getElementById("sliderRight").value;
         var timeTaken;
@@ -79,8 +79,10 @@ window.onload =init;
 function dropObject(){
 
     setSpeed();
-    moveDown();
-    moveDownRight();
+    if(elementChildren(imgObj)[0]!=undefined)
+        moveDown();
+    if(elementChildren(imgObjRight)[0]!=undefined)
+        moveDownRight();
     document.getElementById('r1').disabled=true;
     document.getElementById('r2').disabled=true;
     var btn=document.getElementById("submit");
@@ -116,19 +118,22 @@ function doRestore(){
 //    elementChildren(imgObj)[1].style.height="50px";
 //    imgObjRight.style.width="50px";
 //    imgObjRight.style.height="50px";
-document.getElementById("leftFinDestination").childNodes[0].style.cssText="height: 50px; width: 50px;"
-document.getElementById("rightFinDestination").childNodes[0].style.cssText="height: 50px; width: 50px;"
 
-    if(elementChildren(imgObj)[0] || elementChildren(imgObjRight)[0])
+    if(elementChildren(imgObjRight)[0]!=undefined)
         {
-        document.getElementById('leftObjects').appendChild(elementChildren(imgObj)[0]);
+        document.getElementById("rightFinDestination").childNodes[0].style.cssText="height: 50px; width: 50px;"
         document.getElementById('rightObjects').appendChild(elementChildren(imgObjRight)[0]);
+        }
+    if(elementChildren(imgObj)[0]!=undefined)
+        {
+        document.getElementById("leftFinDestination").childNodes[0].style.cssText="height: 50px; width: 50px;"
+        document.getElementById('leftObjects').appendChild(elementChildren(imgObj)[0]);
         }
     console.log("hel: "+elementChildren(imgObjRight));
 
-    imgObj.style.top = '15px';
+    imgObj.style.top = '70px';
 
-    imgObjRight.style.top = '15px';
+    imgObjRight.style.top = '70px';
     var btn=document.getElementById("submit").value="Drop";
     document.getElementById("drag1").setAttribute("draggable", true);
     document.getElementById("drag2").setAttribute("draggable", true);
