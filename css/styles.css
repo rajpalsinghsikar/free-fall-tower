@@ -244,4 +244,12 @@ table td {
 }
 
 
-
+#bubble{
+    position: absolute;
+    left: 50%;
+    background-image: url(../images/bubble.png);
+    background-size: 100% 100%;
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    font-size: 20px;
+}

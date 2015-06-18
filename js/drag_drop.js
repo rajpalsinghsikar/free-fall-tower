@@ -8,12 +8,20 @@ function drag(ev) {
 //  document.getElementById("text").innerHTML=ev.target.id;
     var data = ev.dataTransfer.getData("text");
     ev.dataTransfer.setData("textNode", ev.target);
+    if(ev.target.parentNode.id==="leftObjects")
+        callBubble("Place Object here...",110,100,200,-593,0,33,0,0,26,0,"left");
+    if(ev.target.parentNode.id==="leftDestination")
+        callBubble("Move Object to here...",110,100,135,-400,0,60,0,0,20,2,"left");
+    
+    if(ev.target.parentNode.id==="rightObjects")
+        callBubble("Place Object here...",150,100,188,450,0,45,0,0,26,1,"left");
+    if(ev.target.parentNode.id==="rightDestination")
+        callBubble("Move Object to here...",150,100,0,275,0,45,0,0,26,0,"left");
 
 }
 function drop(ev) {
     ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    
+    var data = ev.dataTransfer.getData("text");    
     console.log("data: "+data);
     var tar=ev.target.id;
     if(((tar==="foot-ball-left" || tar==="cotton-ball-left" || tar==="iron-ball-left" || tar==="golf-ball-left" )&&(data==="foot-ball-left" || data==="cotton-ball-left" || data==="iron-ball-left" || data==="golf-ball-left")) || ((tar==="foot-ball-right" || tar==="cotton-ball-right" || tar==="iron-ball-right" || tar==="golf-ball-right" )&&(data==="foot-ball-right" || data==="cotton-ball-right" || data==="iron-ball-right" || data==="golf-ball-right")) )
@@ -53,16 +61,24 @@ function drop(ev) {
     
     
     if((document.getElementById("leftFinDestination").childNodes[0]===undefined) && (document.getElementById("rightFinDestination").childNodes[0]===undefined))
+        {
         document.getElementById("submit").disabled=true;
+        }
     else
+        {
         document.getElementById("submit").disabled=false;
-    
+        if (document.getElementById("rightFinDestination").childNodes[0]===undefined)
+            callBubble("Pick an Object to Weight",150,100,0,345,0,45,0,0,26,1,"left");
+        else
+            callBubble("Choose medium & Click on Drop",145,85,65,-205,0,45,0,0,20,2,"left");
+        }
     if(document.getElementById("leftDestination").childNodes[1]===undefined)
         {
         document.getElementById("sliderLeft").disabled=true;
         }
     else
         {
+        callBubble("Increase or Decrease the weight of the object",165,150,285,-550,0,60,0,0,26,0,"left");
         document.getElementById("sliderLeft").disabled=false;
         document.getElementById("sliderLeft").value=100;
         document.getElementById("leftMass").value=100;
@@ -73,6 +89,7 @@ function drop(ev) {
         }
     else
         {
+        callBubble("Increase or Decrease the weight of the object",165,150,290,390,0,60,0,0,26,1,"left");
         document.getElementById("sliderRight").disabled=false;
         document.getElementById("sliderRight").value=100;
         document.getElementById("rightMass").value=100;
@@ -85,14 +102,7 @@ function drop(ev) {
         {
         document.getElementById(data).style.cssText="height: 50px; width: 50px;";
         }
+
 }
 
 
-function setLocalData(tableDataName,tableData){
-        if(typeof(Storage) !== "undefined") {
-            localStorage.setItem(tableDataName,tableData);
-} else {
-    // Sorry! No Web Storage support..
-    console.log("no Support for storage");
-}
-}

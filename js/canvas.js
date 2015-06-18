@@ -4,6 +4,7 @@ var speedRight=1;
 var speed=1;
 
 function init(){
+    callBubble("Pick an Object to Weight",150,100,0,-513,0,45,0,0,26,0,"left");
     document.getElementById("submit").disabled=true;
     document.getElementById("sliderLeft").value=0;
     document.getElementById("leftMass").value=document.getElementById("sliderLeft").value; 
@@ -45,6 +46,7 @@ function moveDown(){
         document.getElementById("submit").disabled=false;
         document.getElementById('r1').disabled=false;
         document.getElementById('r2').disabled=false;
+        callBubble("Click on Reset to Perfom new experiment",136,113,75,-197,0,60,0,0,40,2,"left");
         }
 }
 
@@ -71,13 +73,14 @@ function moveDownRight(){
         document.getElementById("submit").disabled=false;
         document.getElementById('r1').disabled=false;
         document.getElementById('r2').disabled=false;
+        callBubble("Click on Reset to Perfom new experiment",136,113,75,-197,0,60,0,0,40,2,"left");
     }
 }
 
 window.onload =init;
 
 function dropObject(){
-
+    destroyBubble();
     setSpeed();
     if(elementChildren(imgObj)[0]!=undefined)
         moveDown();
@@ -161,6 +164,7 @@ function doRestore(){
     
     var btn=document.getElementById("submit");
     btn.onclick=dropObject;
+    callBubble("Pick an Object to Weight",150,100,0,-513,0,45,0,0,26,0,"left");
 }
 
 
