@@ -114,7 +114,7 @@ function setSpeed(){
 
 
 function getElementName(name){
-    var determiner=elementChildren(imgObjRight)[0].id.substring(elementChildren(imgObjRight)[0].id.length-2,elementChildren(imgObjRight)[0].id.length)
+    var determiner=name.substring(name.length-2,name.length)
     var name=null;
     if(determiner==="ft")       // left object
         {
