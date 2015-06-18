@@ -61,7 +61,6 @@ img.machine{
     width:124px;
     height:125px; 
     margin:10px;padding:10px;
-    border:1px solid #aaaaaa;
 }
 
 #leftDestination
@@ -72,7 +71,6 @@ img.machine{
     width:50px;
     height:50px; 
     margin:10px;padding:10px;
-    border:1px solid #aaaaaa;
 }
 
 
@@ -84,7 +82,6 @@ img.machine{
     width:50px;
     height:50px; 
     margin:10px;padding:10px;
-    border:1px solid #aaaaaa;
 }
 
 #leftFinDestination{
@@ -94,7 +91,6 @@ img.machine{
     width:50px;
     height:50px; 
     margin:10px;padding:10px;
-    border:1px solid #990000;
 }
 
 #rightFinDestination{
@@ -105,7 +101,6 @@ img.machine{
     width:50px;
     height:50px; 
     margin:10px;padding:10px;
-    border:1px solid #aaaaaa;
 }
 
 .monkey{
