@@ -33,7 +33,7 @@ function moveDown(){
 //        console.log("obj: "+elementChildren(imgObj)[1].src.substring(30,elementChildren(imgObj)[1].src.length-4));
 //        console.log("mass: "+document.getElementById("sliderLeft").value);
 //        console.log("env: "+getEnv());
-        var el=elementChildren(imgObj)[0].src.substring(30,elementChildren(imgObj)[0].src.length-4);
+        var el=getElementName(elementChildren(imgObj)[0].id);
         var mass=document.getElementById("sliderLeft").value;
         var timeTaken;
         if(speed===speedRight)
@@ -58,7 +58,7 @@ function moveDownRight(){
 //        console.log(elementChildren(imgObjRight)[2].src.substring(30,elementChildren(imgObj)[1].src.length-4));
 //        console.log("mass: "+document.getElementById("sliderRight").value);
 //        console.log("env: "+getEnv());
-        var el=elementChildren(imgObjRight)[0].src.substring(30,elementChildren(imgObjRight)[0].src.length-4);
+        var el=getElementName(elementChildren(imgObjRight)[0].id);
 //        console.log("err: "+elementChildren(imgObjRight)[1]);
         var mass=document.getElementById("sliderRight").value;
         var timeTaken;
@@ -110,6 +110,21 @@ function setSpeed(){
 }
 
 
+function getElementName(name){
+    var determiner=elementChildren(imgObjRight)[0].id.substring(elementChildren(imgObjRight)[0].id.length-2,elementChildren(imgObjRight)[0].id.length)
+    var name=null;
+    if(determiner==="ft")       // left object
+        {
+        name=elementChildren(imgObj)[0].id.substring(0,elementChildren(imgObj)[0].id.length-5)
+        }
+    if(determiner==="ht")       // left object
+        {
+        name=elementChildren(imgObjRight)[0].id.substring(0,elementChildren(imgObjRight)[0].id.length-6)
+        }
+    return name;
+    }
+
+
 function doRestore(){
     console.log("imgObj: "+imgObj);
     console.log(elementChildren(imgObj)[0]);
@@ -135,14 +150,7 @@ function doRestore(){
 
     imgObjRight.style.top = '70px';
     var btn=document.getElementById("submit").value="Drop";
-    document.getElementById("drag1").setAttribute("draggable", true);
-    document.getElementById("drag2").setAttribute("draggable", true);
-    document.getElementById("drag3").setAttribute("draggable", true);
-    document.getElementById("drag4").setAttribute("draggable", true);
-    document.getElementById("drag11").setAttribute("draggable", true);
-    document.getElementById("drag22").setAttribute("draggable", true);
-    document.getElementById("drag33").setAttribute("draggable", true);
-    document.getElementById("drag44").setAttribute("draggable", true);
+
     console.log("in restore...");
     
     document.getElementById("submit").disabled=true;

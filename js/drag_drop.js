@@ -7,16 +7,23 @@ function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 //  document.getElementById("text").innerHTML=ev.target.id;
     var data = ev.dataTransfer.getData("text");
+    ev.dataTransfer.setData("textNode", ev.target);
+
 }
 function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     
     console.log("data: "+data);
-
-    if (data === "drag1" || data === "drag2" || data === "drag3" || data === "drag4"){
+    var tar=ev.target.id;
+    if(((tar==="foot-ball-left" || tar==="cotton-ball-left" || tar==="iron-ball-left" || tar==="golf-ball-left" )&&(data==="foot-ball-left" || data==="cotton-ball-left" || data==="iron-ball-left" || data==="golf-ball-left")) || ((tar==="foot-ball-right" || tar==="cotton-ball-right" || tar==="iron-ball-right" || tar==="golf-ball-right" )&&(data==="foot-ball-right" || data==="cotton-ball-right" || data==="iron-ball-right" || data==="golf-ball-right")) )
+        {
+        ;// do nothing. TO ENSURE NOT APPENDING ONE IMG TO ANOTHER IMG AS CHILD...
+        }
+    else {
+        if (data === "foot-ball-left" || data === "cotton-ball-left" || data === "iron-ball-left" || data === "golf-ball-left"){
             console.log("in 1");
-        ev.target.appendChild(document.getElementById(data));
+            ev.target.appendChild(document.getElementById(data));
 //        var ob1=document.getElementById("drag1").setAttribute("draggable", false);  
 //        var ob2=document.getElementById("drag2").setAttribute("draggable", false);
 //        var ob3=document.getElementById("drag3").setAttribute("draggable", false);
@@ -27,18 +34,24 @@ function drop(ev) {
 //    var ob5=document.getElementById(ev.target.id).setAttribute("draggable",true);
 //    console.log(document.getElementById("div1"));
 //    var target=((data===ob1)?ob1:((data===ob2)?ob2:(data===ob3)?ob3:ob4));
-    }
-    else if (data === "drag11" || data === "drag22" || data === "drag33" || data === "drag44"){
-        ev.target.appendChild(document.getElementById(data));
+        }
+        else if (data === "foot-ball-right" || data === "cotton-ball-right" || data === "iron-ball-right" || data === "golf-ball-right"){
+            ev.target.appendChild(document.getElementById(data));
 //        var ob11=document.getElementById("drag11").setAttribute("draggable", false);  
 //        var ob22=document.getElementById("drag22").setAttribute("draggable", false);
 //        var ob33=document.getElementById("drag33").setAttribute("draggable", false);
 //        var ob44=document.getElementById("drag44").setAttribute("draggable", false);
 //        document.getElementById(data).setAttribute("draggable", true);
-    }
-    else
-    {;}
+        }
+        else
+            {;}
+            
+        }
     droppedObj=data;
+    
+    
+    
+    
     if((document.getElementById("leftFinDestination").childNodes[0]===undefined) && (document.getElementById("rightFinDestination").childNodes[0]===undefined))
         document.getElementById("submit").disabled=true;
     else
