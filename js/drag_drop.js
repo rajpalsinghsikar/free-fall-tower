@@ -24,12 +24,12 @@ function drop(ev) {
     var data = ev.dataTransfer.getData("text");    
     console.log("data: "+data);
     var tar=ev.target.id;
-    if(((tar==="foot-ball-left" || tar==="cotton-ball-left" || tar==="iron-ball-left" || tar==="golf-ball-left" )&&(data==="foot-ball-left" || data==="cotton-ball-left" || data==="iron-ball-left" || data==="golf-ball-left")) || ((tar==="foot-ball-right" || tar==="cotton-ball-right" || tar==="iron-ball-right" || tar==="golf-ball-right" )&&(data==="foot-ball-right" || data==="cotton-ball-right" || data==="iron-ball-right" || data==="golf-ball-right")) )
+    if(((tar==="foot-ball-left" || tar==="feather-left" || tar==="iron-ball-left" || tar==="golf-ball-left" )&&(data==="foot-ball-left" || data==="feather-left" || data==="iron-ball-left" || data==="golf-ball-left")) || ((tar==="foot-ball-right" || tar==="feather-right" || tar==="iron-ball-right" || tar==="golf-ball-right" )&&(data==="foot-ball-right" || data==="feather-right" || data==="iron-ball-right" || data==="golf-ball-right")) )
         {
         ;// do nothing. TO ENSURE NOT APPENDING ONE IMG TO ANOTHER IMG AS CHILD...
         }
     else {
-        if (data === "foot-ball-left" || data === "cotton-ball-left" || data === "iron-ball-left" || data === "golf-ball-left"){
+        if (data === "foot-ball-left" || data === "feather-left" || data === "iron-ball-left" || data === "golf-ball-left"){
             console.log("in 1");
             ev.target.appendChild(document.getElementById(data));
 //        var ob1=document.getElementById("drag1").setAttribute("draggable", false);  
@@ -43,7 +43,7 @@ function drop(ev) {
 //    console.log(document.getElementById("div1"));
 //    var target=((data===ob1)?ob1:((data===ob2)?ob2:(data===ob3)?ob3:ob4));
         }
-        else if (data === "foot-ball-right" || data === "cotton-ball-right" || data === "iron-ball-right" || data === "golf-ball-right"){
+        else if (data === "foot-ball-right" || data === "feather-right" || data === "iron-ball-right" || data === "golf-ball-right"){
             ev.target.appendChild(document.getElementById(data));
 //        var ob11=document.getElementById("drag11").setAttribute("draggable", false);  
 //        var ob22=document.getElementById("drag22").setAttribute("draggable", false);
