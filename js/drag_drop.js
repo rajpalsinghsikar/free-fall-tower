@@ -7,6 +7,11 @@ function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 //  document.getElementById("text").innerHTML=ev.target.id;
     var data = ev.dataTransfer.getData("text");
+    
+     dragSrcEl=ev.target;
+   ev.dataTransfer.effectAllowed='move';
+   ev.dataTransfer.setData("src",ev.target.src);
+    
     ev.dataTransfer.setData("textNode", ev.target);
     if(ev.target.parentNode.id==="leftObjects")
         callBubble("Place Object here...",110,100,200,-593,0,33,0,0,26,0,"left");
@@ -20,8 +25,22 @@ function drag(ev) {
 
 }
 function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");    
+
+if(ev.target.src!==undefined){
+       console.log("src is not undefined")
+   if(dragSrcEl!=ev.target){
+   dragSrcEl.src=ev.target.src;
+       ev.target.src=ev.dataTransfer.getData("src");
+       console.log(ev.target.id);
+       console.log("DROPPED");
+   }
+   }
+   else{
+   console.log("src is undefined");
+   ev.preventDefault();
+   var data = ev.dataTransfer.getData("text");
+   }
+
     console.log("data: "+data);
     var tar=ev.target.id;
     if(((tar==="foot-ball-left" || tar==="feather-left" || tar==="iron-ball-left" || tar==="golf-ball-left" )&&(data==="foot-ball-left" || data==="feather-left" || data==="iron-ball-left" || data==="golf-ball-left")) || ((tar==="foot-ball-right" || tar==="feather-right" || tar==="iron-ball-right" || tar==="golf-ball-right" )&&(data==="foot-ball-right" || data==="feather-right" || data==="iron-ball-right" || data==="golf-ball-right")) )
@@ -78,7 +97,7 @@ function drop(ev) {
         }
     else
         {
-        callBubble("Increase or Decrease the weight of the object",165,150,285,-550,0,60,0,0,26,0,"left");
+        callBubble("Increase or Decrease MASS and give object to MONKEY",210,150,285,-550,0,60,0,0,26,0,"left");
         document.getElementById("sliderLeft").disabled=false;
         document.getElementById("sliderLeft").value=100;
         document.getElementById("leftMass").value=100;
@@ -89,7 +108,7 @@ function drop(ev) {
         }
     else
         {
-        callBubble("Increase or Decrease the weight of the object",165,150,290,390,0,60,0,0,26,1,"left");
+        callBubble("Increase or Decrease MASS and give object to MONKEY",210,150,290,346,0,60,0,0,26,1,"left");
         document.getElementById("sliderRight").disabled=false;
         document.getElementById("sliderRight").value=100;
         document.getElementById("rightMass").value=100;
