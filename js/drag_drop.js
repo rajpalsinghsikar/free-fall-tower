@@ -14,14 +14,14 @@ function drag(ev) {
     
     ev.dataTransfer.setData("textNode", ev.target);
     if(ev.target.parentNode.id==="leftObjects")
-        callBubble("Place Object here...",110,100,200,-593,0,33,0,0,26,0,"left");
+        callBubble("Place Object here...",120,70,-480,-403,0,33,0,0,26,0,"left");
     if(ev.target.parentNode.id==="leftDestination")
-        callBubble("Move Object to here...",110,100,135,-400,0,60,0,0,20,2,"left");
+        callBubble("Move Object to here...",110,70,-500,-290,0,60,0,0,20,2,"left");
     
     if(ev.target.parentNode.id==="rightObjects")
-        callBubble("Place Object here...",150,100,188,450,0,45,0,0,26,1,"left");
+        callBubble("Place Object here...",110,70,-490,235,0,30,0,0,26,1,"left");
     if(ev.target.parentNode.id==="rightDestination")
-        callBubble("Move Object to here...",150,100,0,275,0,45,0,0,26,0,"left");
+        callBubble("Move Object to here...",110,70,-610,131,0,30,0,0,20,0,"left");
 
 }
 function drop(ev) {
@@ -87,9 +87,9 @@ if(ev.target.src!==undefined){
         {
         document.getElementById("submit").disabled=false;
         if (document.getElementById("rightFinDestination").childNodes[0]===undefined)
-            callBubble("Pick an Object to Weight",150,100,0,345,0,45,0,0,26,1,"left");
+            callBubble("Pick an Object to Weight",110,70,-620,215,0,33,0,0,20,1,"left");
         else
-            callBubble("Choose medium & Click on Drop",145,85,65,-205,0,45,0,0,20,2,"left");
+            callBubble("Choose medium & Click on Drop",110,70,-646,-190,0,33,0,0,20,1,"left");
         }
     if(document.getElementById("leftDestination").childNodes[1]===undefined)
         {
@@ -97,7 +97,7 @@ if(ev.target.src!==undefined){
         }
     else
         {
-        callBubble("Increase or Decrease MASS and give object to MONKEY",210,150,285,-550,0,60,0,0,26,0,"left");
+        callBubble("Increase or Decrease MASS and give object to MONKEY",201,105,-336,-360,0,50,27,0,15,0,"left");
         document.getElementById("sliderLeft").disabled=false;
         document.getElementById("sliderLeft").value=100;
         document.getElementById("leftMass").value=100;
@@ -108,7 +108,7 @@ if(ev.target.src!==undefined){
         }
     else
         {
-        callBubble("Increase or Decrease MASS and give object to MONKEY",210,150,290,346,0,60,0,0,26,1,"left");
+        callBubble("Increase or Decrease MASS and give object to MONKEY",200,105,-335,90,0,50,27,0,15,1,"left");
         document.getElementById("sliderRight").disabled=false;
         document.getElementById("sliderRight").value=100;
         document.getElementById("rightMass").value=100;

@@ -4,7 +4,7 @@ var speedRight=1;
 var speed=1;
 
 function init(){
-    callBubble("Pick an Object to Weight",150,100,0,-513,0,45,0,0,26,0,"left");
+    callBubble("Pick an Object to Weight",120,70,-610,-363,0,30,0,0,26,0,"left");
     document.getElementById("submit").disabled=true;
     document.getElementById("sliderLeft").value=0;
     document.getElementById("leftMass").value=document.getElementById("sliderLeft").value; 
@@ -16,15 +16,15 @@ function init(){
     
     imgObj = document.getElementById('leftFinDestination');
 //    imgObj.style.position= 'relative'; 
-    imgObj.style.top = '70px';
+    imgObj.style.top = '-20px';
     imgObjRight = document.getElementById('rightFinDestination');
 //    imgObjRight.style.position= 'fixed'; 
-    imgObjRight.style.top = '70px';    
+    imgObjRight.style.top = '-20px';    
 //    imgObjRight.style.right = '500px'; 
 
 }
 function moveDown(){
-    if(parseInt(imgObj.style.top)<421)
+    if(parseInt(imgObj.style.top)<=310)
         {
         imgObj.style.top = parseInt(imgObj.style.top) + speed + 'px';
         setTimeout(moveDown,60);
@@ -46,12 +46,12 @@ function moveDown(){
         document.getElementById("submit").disabled=false;
         document.getElementById('r1').disabled=false;
         document.getElementById('r2').disabled=false;
-        callBubble("Click on Reset to Perfom new experiment",136,113,75,-197,0,60,0,0,40,2,"left");
+        callBubble("Click on Reset to Perfom new experiment",145,80,-580,-205,0,50,0,0,20,2,"left");
         }
 }
 
 function moveDownRight(){
-    if(parseInt(imgObjRight.style.top)<420)
+    if(parseInt(imgObjRight.style.top)<=310)
         {
         imgObjRight.style.top = parseInt(imgObjRight.style.top) + speedRight + 'px';
         setTimeout(moveDownRight,60);
@@ -73,7 +73,7 @@ function moveDownRight(){
         document.getElementById("submit").disabled=false;
         document.getElementById('r1').disabled=false;
         document.getElementById('r2').disabled=false;
-        callBubble("Click on Reset to Perfom new experiment",136,113,75,-197,0,60,0,0,40,2,"left");
+        callBubble("Click on Reset to Perfom new experiment",145,80,-580,-205,0,50,0,0,20,2,"left");
     }
 }
 
@@ -149,9 +149,9 @@ function doRestore(){
         }
     console.log("hel: "+elementChildren(imgObjRight));
 
-    imgObj.style.top = '70px';
+    imgObj.style.top = '-20px';
 
-    imgObjRight.style.top = '70px';
+    imgObjRight.style.top = '-20px';
     var btn=document.getElementById("submit").value="Drop";
 
     console.log("in restore...");
@@ -164,7 +164,7 @@ function doRestore(){
     
     var btn=document.getElementById("submit");
     btn.onclick=dropObject;
-    callBubble("Pick an Object to Weight",150,100,0,-513,0,45,0,0,26,0,"left");
+    callBubble("Pick an Object to Weight",120,70,-610,-363,0,30,0,0,26,0,"left");
 }
 
 

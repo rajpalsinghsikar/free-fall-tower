@@ -1,121 +1,185 @@
+#main-container{
+    align-self: center;
+    margin: auto;
+    width: 1024px;
+    height: 700px;
+    background-color:#E9E9E9;
+    padding: 20px;
+}
 
 body{
     background-color:#58ACFA;
 }
 
-
-header {
-    background-color:black;
-    color:white;
-    text-align:center;
-    padding:5px;
-	 //my
+#logo-kit{
+    float: left;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
 }
-nav {
-    line-height:30px;
-    height:300px;
-    width:100%;
+#logo{
+    float: left;
+    height: 60px;
+    width: 150px;
+}
+#experiment-name{
+    float: left;
+    width: 750px;
+    height: 100px;
+    font-size: 45px;
+    text-align: center;
+    padding-bottom: 10px;
+    font-family: sans-serif serif;
+    color: rgb(32,48,77);
+}
+
+
+#left-tool-kit{
+    width:200px;
+    height: 450px;
+    float: left;
+    margin-left: 15px;
+}
+#leftObjects
+{
     float:left;
-    padding:5px;	      
 }
-section {
-    width:100%;
-    height: 100%;
+#leftDestination
+{
+    width:50px;
+    height:50px; 
+    margin-top:200px;
+    margin-left: 50px;
+}
+#lMachine{
+float: left;
+}
+#leftMass {
+position: relative;
+top: -45px;
+left: -95px;
+color: red;
+font-size: 25px;
+}
+
+
+
+
+#left-monkey-kit{
+    width:245px;
+    height: 450px;
+    float: left;
+}
+#leftMonkey{
+    margin-left: 100px;
+}
+#leftFinDestination{
+    position: relative;
+    top: 0px;
+    float: left;
+    margin-left: 125px;
+    width:50px;
+    height:50px;
+}
+
+
+
+
+
+
+
+#ruler {
+    float: left;
+    top: 20px;
+    width: 120px;
+    height: 450px;
+    background-size: 80px 60px;
+}
+
+#rulerImage{
+width:100px;
+height:87%;
+}
+
+#form{
+}
+#ruler form.button{
+width: 200px; height : 60px;}
+
+
+
+
+
+
+#right-monkey-kit{
+float: left;
+width: 240px;
+height: 450px;
+
+}
+#rightMonkey{
+    left: 45%;
+}
+#rightFinDestination{
+    position: relative;
+    line-height: 0px;
+    top:30px;
+    width:50px;
+    height:50px; 
+    margin-left: 25px;
+}
+
+
+
+
+
+#right-tool-kit{
+    float: left;
+    width: 200px;
+    height: 450px;
+}
+
+#rightObjects
+{
     float:left;
-    padding:10px;	 	 
+    margin-left: 30px;
 }
-footer {
-    color:black;
-    clear:both;
-    height:10px;
-    width: 100%
-    text-align:center;
-    padding:1px;
-    border-collapse: collapse;
+#rightDestination
+{
+    width:50px;
+    height:50px; 
+    margin-top:200px;
+    margin-left: 50px;
+}
+#rightMass {
+position: relative;
+top:-45px;
+left: -95px;
+color: red;
+font-size: 25px;
+}
+#rMachine{
+float: right;
+width: 200px;
 }
 
-
-
+#WeighingMachine{
+    width: 150px;
+    height: 150px;   
+}
 img.machine{
     width:150px;
     height:150px; 
 }
 
-
-#leftObjects
-{
-    position: fixed;
-    float:left;
-    top:15px;
-    left:40px;  
-}
-#rightObjects
-{
-    position: fixed;
-    float:right;
-    top:15px;
-    right:40px;    
-}
-
 .objects{
     width:124px;
     height:125px; 
-    margin:10px;padding:10px;
-}
-
-#leftDestination
-{
-    position: absolute;
-    top:275px;
-    left:50px;
-    width:50px;
-    height:50px; 
-    margin:10px;padding:10px;
-}
-
-
-#rightDestination
-{
-    position: absolute;
-    top:275px;
-    right:30px;
-    width:50px;
-    height:50px; 
-    margin:10px;padding:10px;
-}
-
-#leftFinDestination{
-    position: fixed;
-    top:30px;
-    left:30.5%;
-    width:50px;
-    height:50px; 
-    margin:10px;padding:10px;
-}
-
-#rightFinDestination{
-    position: fixed;
-    line-height: 0px;
-    top:30px;
-    right:30%;
-    width:50px;
-    height:50px; 
-    margin:10px;padding:10px;
 }
 
 .monkey{
     width: 100px;
-    height: 100px;
-}
-
-#leftMonkey{
-    position: fixed;
-    left: 30%;
-}
-
-#rightMonkey{
-    position: fixed;
-    right: 30%;
+    height: 85px;
 }
 
 
@@ -123,58 +187,6 @@ img.machine{
     width: 150px;
     height: 10px;
 }
-
-#WeighingMachine{
-    width: 150px;
-    height: 150px;   
-}
-
-
-#leftMass {
-position: absolute;
-left: 80px;
-top: 440px;
-color: red;
-font-size: 25px;
-}
-
-#rightMass {
-position: absolute;
-right: 60px;
-top: 440px;
-color: red;
-font-size: 25px;
-}
-
-#lMachine{
-float: left;
-
-}
-#rMachine{
-float: right;
-}
-
-
-#ruler {
-    position: fixed;
-    top: 20px;
-    left: 45%;
-    width: 150px;
-    height: 206px;
-        background-size: 80px 60px;
-}
-
-#rulerImage{
-width:100px;
-height:200%;
-}
-
-#form{
-
-}
-#ruler form.button{
-width: 200px; height : 60px;}
-
 
 #canvas{
     position: fixed;
@@ -188,9 +200,9 @@ width: 200px; height : 60px;}
 #submit{
     width:100px;
     height:30px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    background: blue;
+    border-radius: 15px; 
+    background: #A35F2D;
+    color: white;
 }
 
 #tableHeader{
@@ -203,21 +215,40 @@ width: 200px; height : 60px;}
 }
 #tableHeader tr{
     color:white;
-    background-color:grey;
+    background-color:#282828;
 }
 #table{
     width:100%;
-    height:10%;
+    height:10px;
     border: 2;
 }
 
 #table th {
-    border: 2px solid black;
+    border: 1px solid #282828;
 }
 table td {
-    border: 2px solid green;
+    border: 1px solid ;
     text-align: center;
     width: 25%;
+}
+
+
+#tb-data{
+    float: left;
+    width: 100%;
+    height: 20px;
+    margin-top:5px;
+    background-color: #181818;
+}
+
+#ground{
+position: relative;
+top: 2px;
+float: left;
+width: 600px;
+height: 8px;
+margin-left: 195px;
+background-color: rgb(164, 116, 49);
 }
 
 
@@ -240,11 +271,11 @@ table td {
 
 
 #bubble{
-    position: absolute;
-    left: 50%;
+    position: relative;
     background-image: url(../images/bubble.png);
     background-size: 100% 100%;
     background-position: 0px 0px;
     background-repeat: no-repeat;
-    font-size: 20px;
+    font-size: 15px;
+    left: 50%;
 }
