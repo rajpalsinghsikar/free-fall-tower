@@ -89,16 +89,19 @@ function dropObject(){
         document.getElementById("rightFinDestination").childNodes[0].draggable=false;
     if(elementChildren(imgObj)[0]!=undefined)
         {
-        for(var i=0;i<document.getElementById("leftObjects").childNodes.length;i++)
-            document.getElementById("leftObjects").childNodes[i].draggable=false;
         moveDown();
         }
     if(elementChildren(imgObjRight)[0]!=undefined)
         {
-        for(var i=0;i<document.getElementById("rightObjects").childNodes.length;i++)
-            document.getElementById("rightObjects").childNodes[i].draggable=false;
         moveDownRight();
         }
+    
+    for(var i=0;i<document.getElementById("rightObjects").childNodes.length;i++)
+        document.getElementById("rightObjects").childNodes[i].draggable=false;
+    
+    for(var i=0;i<document.getElementById("leftObjects").childNodes.length;i++)
+        document.getElementById("leftObjects").childNodes[i].draggable=false;
+
     document.getElementById('r1').disabled=true;
     document.getElementById('r2').disabled=true;
     var btn=document.getElementById("submit");

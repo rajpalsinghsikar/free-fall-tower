@@ -14,6 +14,10 @@ function sliderChange(status , value){
 //var i = document.getElementById("slider").value;
 console.log("value: "+value);
 if (status===0){
+    if (value<100){
+        value=100;
+        document.getElementById("sliderLeft").value=100;
+    }
     var ld = document.getElementById("leftDestination");
     console.log(status+" --> ld: "+ld);
 //    document.getElementById("leftMass").value=value;
@@ -23,6 +27,10 @@ if (status===0){
     leftMeterChange(value);
     }
 else if(status===1){
+    if (value<100){
+        value=100;
+        document.getElementById("sliderRight").value=100;
+    }
     var ld = document.getElementById("rightDestination");
     console.log(status+" --> ld: "+ld);
 //    document.getElementById("rightMass").value=value;

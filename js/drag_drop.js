@@ -18,12 +18,12 @@ function drag(ev) {
         callBubble("Place Object here...",120,70,-480,-403,0,33,0,0,26,0,"left");
         }
     if(ev.target.parentNode.id==="leftDestination")
-        callBubble("Move Object to here...",110,70,-560,-290,0,60,0,0,20,2,"left");
+        callBubble("Move Object to here...",110,70,-560,-295,0,60,0,0,20,2,"left");
     
     if(ev.target.parentNode.id==="rightObjects")
         callBubble("Place Object here...",110,70,-490,235,0,30,0,0,26,1,"left");
     if(ev.target.parentNode.id==="rightDestination")
-        callBubble("Move Object to here...",110,70,-610,131,0,30,0,0,20,0,"left");
+        callBubble("Move Object to here...",110,70,-610,145,0,30,0,0,20,0,"left");
 
 }
 function drop(ev) {
@@ -53,10 +53,17 @@ if(ev.target.src!==undefined){
     else {
         if (data === "foot-ball-left" || data === "feather-left" || data === "iron-ball-left" || data === "golf-ball-left"){
             console.log("in 1");
-            if(ev.target.id=="leftDestination" && document.getElementById("leftFinDestination").childNodes.length==0)
-                ev.target.appendChild(document.getElementById(data));
-            if((document.getElementById("leftDestination").childNodes[1] || document.getElementById("leftFinDestination").childNodes[0]) && (ev.target.id==="leftFinDestination" || ev.target.id==="leftObjects"))
-                ev.target.appendChild(document.getElementById(data));
+            if(ev.target.id=="leftDestination" && document.getElementById("leftFinDestination").childNodes.length==0){
+                if(document.getElementById("leftDestination").childNodes.length===1)                    // limiting one child in leftDestination
+                    ev.target.appendChild(document.getElementById(data));
+            }
+            if(document.getElementById("leftDestination").childNodes[1] || document.getElementById("leftFinDestination").childNodes[0]){                                           if (ev.target.id==="leftFinDestination" && dragSrcEl.id===document.getElementById("leftDestination").childNodes[1].id)
+                    ev.target.appendChild(document.getElementById(data));
+                if (ev.target.id==="leftObjects")
+                    ev.target.appendChild(document.getElementById(data));
+                }
+            if(ev.target.id==="leftObjects")
+                leftMeterChange(0);
 //        var ob1=document.getElementById("drag1").setAttribute("draggable", false);  
 //        var ob2=document.getElementById("drag2").setAttribute("draggable", false);
 //        var ob3=document.getElementById("drag3").setAttribute("draggable", false);
@@ -69,11 +76,17 @@ if(ev.target.src!==undefined){
 //    var target=((data===ob1)?ob1:((data===ob2)?ob2:(data===ob3)?ob3:ob4));
         }
         else if (data === "foot-ball-right" || data === "feather-right" || data === "iron-ball-right" || data === "golf-ball-right"){
-            if(ev.target.id=="rightDestination" && document.getElementById("rightFinDestination").childNodes.length==0 )
-                ev.target.appendChild(document.getElementById(data));
-            if((document.getElementById("rightDestination").childNodes[1] || document.getElementById("rightFinDestination").childNodes[0]) && (ev.target.id==="rightFinDestination" || ev.target.id==="rightObjects"))
-                ev.target.appendChild(document.getElementById(data));
-
+            if(ev.target.id=="rightDestination" && document.getElementById("rightFinDestination").childNodes.length==0 ){
+                if(document.getElementById("rightDestination").childNodes.length===1)
+                    ev.target.appendChild(document.getElementById(data));
+            }
+            if(document.getElementById("rightDestination").childNodes[1] || document.getElementById("rightFinDestination").childNodes[0]){                                           if (ev.target.id==="rightFinDestination" && dragSrcEl.id===document.getElementById("rightDestination").childNodes[1].id)
+                    ev.target.appendChild(document.getElementById(data));
+                if (ev.target.id==="rightObjects")
+                    ev.target.appendChild(document.getElementById(data));
+                }
+            if(ev.target.id==="rightObjects")
+                rightMeterChange(0);
 //        var ob11=document.getElementById("drag11").setAttribute("draggable", false);  
 //        var ob22=document.getElementById("drag22").setAttribute("draggable", false);
 //        var ob33=document.getElementById("drag33").setAttribute("draggable", false);
@@ -114,7 +127,7 @@ if(ev.target.src!==undefined){
             document.getElementById("leftDestination").childNodes[1].style.bottom="0px";
             document.getElementById("leftDestination").childNodes[1].style.position="absolute";
         }
-        callBubble("Increase or Decrease MASS and give object to MONKEY",201,105,-336,-360,0,50,27,0,15,0,"left");
+        callBubble("Increase or Decrease MASS and give object to MONKEY",201,105,-350,-345,0,50,27,0,15,0,"left");
         document.getElementById("sliderLeft").disabled=false;
         document.getElementById("sliderLeft").value=100;
         leftMeterChange(document.getElementById("sliderLeft").value);
@@ -133,7 +146,7 @@ if(ev.target.src!==undefined){
             document.getElementById("rightDestination").childNodes[1].style.bottom="0px";
             document.getElementById("rightDestination").childNodes[1].style.position="absolute";
         }
-        callBubble("Increase or Decrease MASS and give object to MONKEY",200,105,-335,90,0,50,27,0,15,1,"left");
+        callBubble("Increase or Decrease MASS and give object to MONKEY",200,105,-350,70,0,50,27,0,15,1,"left");
         document.getElementById("sliderRight").disabled=false;
         document.getElementById("sliderRight").value=100;
         rightMeterChange(document.getElementById("sliderRight").value);
