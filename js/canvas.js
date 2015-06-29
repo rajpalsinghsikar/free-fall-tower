@@ -7,24 +7,24 @@ function init(){
     callBubble("Pick an Object to Weight",120,70,-610,-363,0,30,0,0,26,0,"left");
     document.getElementById("submit").disabled=true;
     document.getElementById("sliderLeft").value=0;
-    document.getElementById("leftMass").value=document.getElementById("sliderLeft").value; 
+//    document.getElementById("leftMass").value=document.getElementById("sliderLeft").value; 
     document.getElementById("sliderRight").value=0;
-    document.getElementById("rightMass").value=document.getElementById("sliderRight").value; 
+//    document.getElementById("rightMass").value=document.getElementById("sliderRight").value; 
     document.getElementById("sliderLeft").disabled=true;
     document.getElementById("sliderRight").disabled=true;
-
-    
+    leftMeterChange(0);
+    rightMeterChange(0);    
     imgObj = document.getElementById('leftFinDestination');
 //    imgObj.style.position= 'relative'; 
-    imgObj.style.top = '-20px';
+    imgObj.style.top = '-60px';
     imgObjRight = document.getElementById('rightFinDestination');
 //    imgObjRight.style.position= 'fixed'; 
-    imgObjRight.style.top = '-20px';    
+    imgObjRight.style.top = '-60px';    
 //    imgObjRight.style.right = '500px'; 
 
 }
 function moveDown(){
-    if(parseInt(imgObj.style.top)<=310)
+    if(parseInt(imgObj.style.top)<=314)
         {
         imgObj.style.top = parseInt(imgObj.style.top) + speed + 'px';
         setTimeout(moveDown,60);
@@ -51,7 +51,7 @@ function moveDown(){
 }
 
 function moveDownRight(){
-    if(parseInt(imgObjRight.style.top)<=310)
+    if(parseInt(imgObjRight.style.top)<=314)
         {
         imgObjRight.style.top = parseInt(imgObjRight.style.top) + speedRight + 'px';
         setTimeout(moveDownRight,60);
@@ -82,10 +82,23 @@ window.onload =init;
 function dropObject(){
     destroyBubble();
     setSpeed();
+    
+    if(document.getElementById("leftFinDestination").childNodes[0])
+        document.getElementById("leftFinDestination").childNodes[0].draggable=false;
+    if(document.getElementById("rightFinDestination").childNodes[0])
+        document.getElementById("rightFinDestination").childNodes[0].draggable=false;
     if(elementChildren(imgObj)[0]!=undefined)
+        {
+        for(var i=0;i<document.getElementById("leftObjects").childNodes.length;i++)
+            document.getElementById("leftObjects").childNodes[i].draggable=false;
         moveDown();
+        }
     if(elementChildren(imgObjRight)[0]!=undefined)
+        {
+        for(var i=0;i<document.getElementById("rightObjects").childNodes.length;i++)
+            document.getElementById("rightObjects").childNodes[i].draggable=false;
         moveDownRight();
+        }
     document.getElementById('r1').disabled=true;
     document.getElementById('r2').disabled=true;
     var btn=document.getElementById("submit");
@@ -149,22 +162,32 @@ function doRestore(){
         }
     console.log("hel: "+elementChildren(imgObjRight));
 
-    imgObj.style.top = '-20px';
+    imgObj.style.top = '-60px';
 
-    imgObjRight.style.top = '-20px';
+    imgObjRight.style.top = '-60px';
     var btn=document.getElementById("submit").value="Drop";
 
     console.log("in restore...");
     
     document.getElementById("submit").disabled=true;
     document.getElementById("sliderLeft").value=0;
-    document.getElementById("leftMass").value=document.getElementById("sliderLeft").value; 
+//    document.getElementById("leftMass").value=document.getElementById("sliderLeft").value; 
     document.getElementById("sliderRight").value=0;
-    document.getElementById("rightMass").value=document.getElementById("sliderRight").value; 
+//    document.getElementById("rightMass").value=document.getElementById("sliderRight").value; 
     
     var btn=document.getElementById("submit");
-    btn.onclick=dropObject;
     callBubble("Pick an Object to Weight",120,70,-610,-363,0,30,0,0,26,0,"left");
+    for(var i=0;i<document.getElementById("leftObjects").childNodes.length;i++)
+        document.getElementById("leftObjects").childNodes[i].draggable=true;
+    for(var i=0;i<document.getElementById("rightObjects").childNodes.length;i++)
+        document.getElementById("rightObjects").childNodes[i].draggable=true;  
+    if(document.getElementById("leftFinDestination").childNodes[0])
+        document.getElementById("leftFinDestination").childNodes[0].draggable=true;
+    if(document.getElementById("rightFinDestination").childNodes[0])
+        document.getElementById("rightFinDestination").childNodes[0].draggable=true;
+    leftMeterChange(0);
+    rightMeterChange(0);
+    btn.onclick=dropObject;
 }
 
 

@@ -3,12 +3,12 @@
     margin: auto;
     width: 1024px;
     height: 700px;
-    background-color:#E9E9E9;
+    background-color:#04B4AE;
     padding: 20px;
 }
 
 body{
-    background-color:#58ACFA;
+    background-color:#E9E9E9;
 }
 
 #logo-kit{
@@ -46,13 +46,16 @@ body{
 }
 #leftDestination
 {
-    width:50px;
-    height:50px; 
-    margin-top:200px;
+    position:relative;
+    width:100px;
+    height:100px; 
+    margin-top:150px;
     margin-left: 50px;
 }
 #lMachine{
+position: relative;
 float: left;
+margin-top: -10px;
 }
 #leftMass {
 position: relative;
@@ -71,11 +74,13 @@ font-size: 25px;
     float: left;
 }
 #leftMonkey{
+    position: relative;
     margin-left: 100px;
+    top: -40px;
 }
 #leftFinDestination{
     position: relative;
-    top: 0px;
+    top: -60px;
     float: left;
     margin-left: 125px;
     width:50px;
@@ -118,12 +123,13 @@ height: 450px;
 
 }
 #rightMonkey{
-    left: 45%;
+    position: relative;
+    top: -40px;
 }
 #rightFinDestination{
     position: relative;
     line-height: 0px;
-    top:30px;
+    top:-60px;
     width:50px;
     height:50px; 
     margin-left: 25px;
@@ -146,10 +152,11 @@ height: 450px;
 }
 #rightDestination
 {
-    width:50px;
-    height:50px; 
-    margin-top:200px;
-    margin-left: 50px;
+    position: relative;
+    width:100px;
+    height:100px; 
+    margin-top:150px;
+    margin-left: 40px;
 }
 #rightMass {
 position: relative;
@@ -159,6 +166,8 @@ color: red;
 font-size: 25px;
 }
 #rMachine{
+position: relative;
+margin-top: -10px;
 float: right;
 width: 200px;
 }
@@ -184,6 +193,8 @@ img.machine{
 
 
 .slider{
+    position: relative;
+    top: -150px;
     width: 150px;
     height: 10px;
 }
@@ -278,4 +289,18 @@ background-color: rgb(164, 116, 49);
     background-repeat: no-repeat;
     font-size: 15px;
     left: 50%;
+}
+
+
+div.objects img:hover{
+    width: 50%;
+    height: 50%;
+}
+
+
+.speed-meters{
+position: relative;
+width: 150px;
+height: 150px;
+top: -135px;
 }

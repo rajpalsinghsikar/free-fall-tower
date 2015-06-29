@@ -4,6 +4,8 @@
 <head>
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 <script>var droppedObj; </script>
+<script src="js/highlight.min.js"></script>
+<script src="js/canvasgauge.js"></script>
 <script src="js/bubble.js"></script>
 <script src="js/drag_drop.js"></script>
 <script src="js/slider.js"></script>
@@ -28,8 +30,9 @@
      <img id="lWeighingMachine" class="machine"  src="images/scale.png" alt="lWeighingMachine">
      <br>
 <!--     <input id="slider" type="range" min="0" max="500" step="50" value ="0" onchange="leftMass.value=value" >-->
-     <input id="sliderLeft" class="slider" type="range" min="0" max="500" step="50" value ="0" onchange="sliderChange(0,value)" >
-     <output id="leftMass">0</output>
+     <canvas id="canvasLeft" class="speed-meters"  width="200" height="200"></canvas>
+     <input id="sliderLeft" class="slider" type="range" min="100" max="500" step="50" value ="0" onchange="sliderChange(0,value)" >
+<!--     <output id="leftMass">0</output>-->
 </div>
     </div>
 
@@ -75,8 +78,9 @@ Medium:&nbsp;&nbsp;&nbsp;&nbsp;
 <div id="rMachine">
      <img id="rWeighingMachine" class="machine" src="images/scale.png" alt="rWeighingMachine">
      <br>
-     <input id="sliderRight" class="slider" type ="range" min ="0" max="500" step ="50" value ="0" onchange="sliderChange(1,value)" />
-     <output id="rightMass">0</output>
+    <canvas id="canvasRight" class="speed-meters" width="200" height="200"></canvas>
+     <input id="sliderRight" class="slider" type ="range" min ="100" max="500" step ="50" value ="0" onchange="sliderChange(1,value)" />
+<!--     <output id="rightMass">0</output>-->
 </div>
 </div>  
      
@@ -112,5 +116,4 @@ Medium:&nbsp;&nbsp;&nbsp;&nbsp;
 </body>
 </div>
 <div id="bubble"></div> 
-
 </html>
