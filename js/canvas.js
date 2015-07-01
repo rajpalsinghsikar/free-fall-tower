@@ -35,18 +35,21 @@ function moveDown(){
 //        console.log("mass: "+document.getElementById("sliderLeft").value);
 //        console.log("env: "+getEnv());
         var el=getElementName(elementChildren(imgObj)[0].id);
+        el=getObjectName(el);
         var mass=document.getElementById("sliderLeft").value;
         var timeTaken;
-        if(speed===speedRight)
+        if(document.getElementById('r2').checked)
             timeTaken=Math.sqrt((2*15)/9.8);
         else
             timeTaken=Math.sqrt(((2*15*10)/(9.8*speed)));
         printExperimentData(el, mass, getEnv(), timeTaken.toFixed(2));
-        document.getElementById("submit").value="Reset";
-        document.getElementById("submit").disabled=false;
-        document.getElementById('r1').disabled=false;
-        document.getElementById('r2').disabled=false;
-        callBubble("Click on Reset to Perfom new experiment",145,80,-580,-205,0,50,0,0,20,2,"left");
+        if(parseInt(imgObjRight.style.top)>308 || parseInt(imgObjRight.style.top)===-60){
+            document.getElementById("submit").value="Reset";
+            document.getElementById("submit").disabled=false;
+            document.getElementById('r1').disabled=false;
+            document.getElementById('r2').disabled=false;
+            callBubble("Click on Reset to Perfom new experiment",145,80,-580,-205,0,50,0,0,20,2,"left");
+            }
         }
 }
 
@@ -61,19 +64,22 @@ function moveDownRight(){
 //        console.log("mass: "+document.getElementById("sliderRight").value);
 //        console.log("env: "+getEnv());
         var el=getElementName(elementChildren(imgObjRight)[0].id);
+        el=getObjectName(el);
 //        console.log("err: "+elementChildren(imgObjRight)[1]);
         var mass=document.getElementById("sliderRight").value;
         var timeTaken;
-        if(speed===speedRight)
+        if(document.getElementById('r2').checked)
             timeTaken=Math.sqrt((2*15)/9.8);
         else
             timeTaken=Math.sqrt(((2*15*10)/(9.8*speedRight)));
         printExperimentData(el, mass, getEnv(), timeTaken.toFixed(2));
-        document.getElementById("submit").value="Reset";
-        document.getElementById("submit").disabled=false;
-        document.getElementById('r1').disabled=false;
-        document.getElementById('r2').disabled=false;
-        callBubble("Click on Reset to Perfom new experiment",145,80,-580,-205,0,50,0,0,20,2,"left");
+        if(parseInt(imgObj.style.top)>308 || parseInt(imgObj.style.top)===-60) {
+            document.getElementById("submit").value="Reset";
+            document.getElementById("submit").disabled=false;
+            document.getElementById('r1').disabled=false;
+            document.getElementById('r2').disabled=false;
+            callBubble("Click on Reset to Perfom new experiment",145,80,-580,-205,0,50,0,0,20,2,"left");
+        }
     }
 }
 
@@ -122,12 +128,17 @@ function setSpeed(){
         {
         var massL=document.getElementById("sliderLeft").value;
         var massR=document.getElementById("sliderRight").value;
-        speed=(massL/100)+1;
-        speedRight=(massR/100)+1;
+        speed=(massL/100);
+        speedRight=(massR/100);
         }
     
 }
 
+function getObjectName(obj){
+    var res = obj.charAt(0).toUpperCase() + obj.slice(1);
+    res=res.replace("-b", " B");
+    return res;
+}
 
 function getElementName(name){
     var determiner=name.substring(name.length-2,name.length)
@@ -218,6 +229,7 @@ function getEnv(){
     if (document.getElementById('r2').checked){
         env = document.getElementById('r2').value;
     }
+    env=getObjectName(env);
     return env;
 }
 

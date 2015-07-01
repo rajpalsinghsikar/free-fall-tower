@@ -300,7 +300,9 @@ div.objects img:hover{
 
 .speed-meters{
 position: relative;
-width: 150px;
-height: 150px;
+width: 100px;
+height: 90px;
 top: -135px;
+margin-bottom: 60px;
+left: 25px;
 }
