@@ -5,7 +5,6 @@ function allowDrop(ev) {
 
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
-//  document.getElementById("text").innerHTML=ev.target.id;
     var data = ev.dataTransfer.getData("text");
     
     dragSrcEl=ev.target;
@@ -29,33 +28,26 @@ function drag(ev) {
 function drop(ev) {
 
 if(ev.target.src!==undefined){
-    console.log("src is not undefined")
     if(dragSrcEl.id.substring(dragSrcEl.id.length-4,dragSrcEl.id.length) === ev.target.id.substring(ev.target.id.length-4,ev.target.id.length) ){
         var tempId=dragSrcEl.id;
         dragSrcEl.src=ev.target.src.substring(23,ev.target.src.length);
         dragSrcEl.id=ev.target.id;
         ev.target.src=ev.dataTransfer.getData("src");
         ev.target.id=tempId;
-        console.log(ev.target.id);
-        console.log("DROPPED");
    }
    }
    else{
-   console.log("src is undefined");
    ev.preventDefault();
    }
    var data = ev.dataTransfer.getData("text");
 
-    console.log("data: "+data);
     var tar=ev.target.id;
     if(((tar==="foot-ball-left" || tar==="feather-left" || tar==="iron-ball-left" || tar==="golf-ball-left" )&&(data==="foot-ball-left" || data==="feather-left" || data==="iron-ball-left" || data==="golf-ball-left")) || ((tar==="foot-ball-right" || tar==="feather-right" || tar==="iron-ball-right" || tar==="golf-ball-right" )&&(data==="foot-ball-right" || data==="feather-right" || data==="iron-ball-right" || data==="golf-ball-right")) )
         {
         ;// do nothing. TO ENSURE NOT APPENDING ONE IMG TO ANOTHER IMG AS CHILD...
-        console.log("woh ....");
         }
     else {
         if (data === "foot-ball-left" || data === "feather-left" || data === "iron-ball-left" || data === "golf-ball-left"){
-            console.log("in 1");
             if(ev.target.id=="leftDestination" && document.getElementById("leftFinDestination").childNodes.length==0){
                 if(document.getElementById("leftDestination").childNodes.length===1)                    // limiting one child in leftDestination
                     {
@@ -67,7 +59,6 @@ if(ev.target.src!==undefined){
                     else
                         {
                         if(document.getElementById("leftDestination").childNodes[1]) {
-                            console.log("im in");
                             document.getElementById("leftDestination").childNodes[1].style.height = (100/35+40)+'px';
                             document.getElementById("leftDestination").childNodes[1].style.width = (100/35+40)+'px';
                             document.getElementById("leftDestination").childNodes[1].style.bottom="0px";
@@ -77,7 +68,6 @@ if(ev.target.src!==undefined){
                         document.getElementById("sliderLeft").disabled=false;
                         document.getElementById("sliderLeft").value=100;
                         leftMeterChange(document.getElementById("sliderLeft").value);
-                //        document.getElementById("leftMass").value=100;
                         }
                     }
             }
@@ -90,16 +80,6 @@ if(ev.target.src!==undefined){
                 leftMeterChange(0);
                 destroyBubble();
             }
-//        var ob1=document.getElementById("drag1").setAttribute("draggable", false);  
-//        var ob2=document.getElementById("drag2").setAttribute("draggable", false);
-//        var ob3=document.getElementById("drag3").setAttribute("draggable", false);
-//        var ob4=document.getElementById("drag4").setAttribute("draggable", false);
-//        document.getElementById(data).setAttribute("draggable", true);
-//       var target=((data==="drag1")?"drag1":((data==="drag2")?"drag2":((data==="drag3")?"drag3":"drag4")));
-//    console.log("target: "+target);
-//    var ob5=document.getElementById(ev.target.id).setAttribute("draggable",true);
-//    console.log(document.getElementById("div1"));
-//    var target=((data===ob1)?ob1:((data===ob2)?ob2:(data===ob3)?ob3:ob4));
         }
         else if (data === "foot-ball-right" || data === "feather-right" || data === "iron-ball-right" || data === "golf-ball-right"){
             if(ev.target.id=="rightDestination" && document.getElementById("rightFinDestination").childNodes.length==0 ){
@@ -112,7 +92,6 @@ if(ev.target.src!==undefined){
                     else
                         {
                         if(document.getElementById("rightDestination").childNodes[1]) {
-                            console.log("im in");
                             document.getElementById("rightDestination").childNodes[1].style.height = (100/35+40)+'px';
                             document.getElementById("rightDestination").childNodes[1].style.width = (100/35+40)+'px';
                             document.getElementById("rightDestination").childNodes[1].style.bottom="0px";
@@ -122,7 +101,6 @@ if(ev.target.src!==undefined){
                         document.getElementById("sliderRight").disabled=false;
                         document.getElementById("sliderRight").value=100;
                         rightMeterChange(document.getElementById("sliderRight").value);
-                //        document.getElementById("rightMass").value=100;
                         }
                 }
             }
@@ -135,11 +113,6 @@ if(ev.target.src!==undefined){
                 rightMeterChange(0);
                 destroyBubble();
             }
-//        var ob11=document.getElementById("drag11").setAttribute("draggable", false);  
-//        var ob22=document.getElementById("drag22").setAttribute("draggable", false);
-//        var ob33=document.getElementById("drag33").setAttribute("draggable", false);
-//        var ob44=document.getElementById("drag44").setAttribute("draggable", false);
-//        document.getElementById(data).setAttribute("draggable", true);
         }
         else
             {;}
