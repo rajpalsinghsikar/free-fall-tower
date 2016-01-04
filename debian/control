@@ -1,0 +1,12 @@
+Source: balaswecha-free-fall-tower
+Maintainer: Balaswecha Dev Team <balaswecha-dev-team@thoughtworks.com>
+Section: misc
+Priority: optional
+Standards-Version: 3.9.2
+Build-Depends: debhelper (>= 9)
+
+Package: balaswecha-free-fall-tower
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Free Fall Tower physics simulation
+ Free Fall Tower helps students understand gravity using a simple simulation.
