@@ -1,0 +1,9 @@
+Package: balaswecha-free-fall-tower
+Version: 1.0-1
+Architecture: amd64
+Maintainer: Balaswecha Dev Team <balaswecha-dev-team@thoughtworks.com>
+Installed-Size: 1144
+Section: misc
+Priority: optional
+Description: Free Fall Tower physics simulation
+ Free Fall Tower helps students understand gravity using a simple simulation.

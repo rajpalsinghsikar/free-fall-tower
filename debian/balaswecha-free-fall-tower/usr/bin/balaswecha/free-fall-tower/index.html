@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+<div id="main-container">
+<head>
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<script>var droppedObj; </script>
+<script src="js/highlight.min.js"></script>
+<script src="js/canvasgauge.js"></script>
+<script src="js/bubble.js"></script>
+<script src="js/drag_drop.js"></script>
+<script src="js/slider.js"></script>
+<script src="js/canvas.js"></script>
+</head>
+
+<body>
+    <div id="logo-kit">
+    <img src="images/balaswecha.png" alt="Balaswecha" id="logo" >
+        <div id="experiment-name">Free Fall Tower</div>
+    </div>
+<div id="left-tool-kit">
+<div id="leftObjects" class="objects" ondrop="drop(event)" ondragover="allowDrop(event)"  >
+<img src="images/football.png" draggable="true" ondragstart="drag(event)"  id="foot-ball-left" width="50" height="50">
+<img src="images/feather.png" draggable="true" ondragstart="drag(event)" id="feather-left" width="50" height="50" >
+<img src="images/ironball.png" draggable="true" ondragstart="drag(event)" id="iron-ball-left" width="50" height="50"> 
+<img src="images/golfball.png" draggable="true" ondragstart="drag(event)" id="golf-ball-left" width="50" height="50">
+</div>
+<div id="leftDestination" ondrop="drop(event)" ondragover="allowDrop(event)">
+</div>
+ <div id="lMachine">
+     <img id="lWeighingMachine" class="machine"  src="images/scale.png" alt="lWeighingMachine">
+     <br>
+     <canvas id="canvasLeft" class="speed-meters"  width="200" height="200"></canvas>
+     <input id="sliderLeft" class="slider" type="range" min="0" max="500" step="50" value ="0" onchange="sliderChange(0,value)" >
+</div>
+    </div>
+
+    
+  
+<div id="left-monkey-kit">
+<img src="images/monkey.png" id="leftMonkey" class="monkey" alt="monkey" >
+<div id="leftFinDestination" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</div>     
+     
+     
+<div id="ruler">
+    
+Medium:&nbsp;&nbsp;&nbsp;&nbsp;
+
+<div id="form">
+<input type="radio" id="r1" name="env" value="air" checked>Air
+<input type="radio" id="r2" name="env" value="vaccum">Vaccum
+    <input id="submit"  type="button" value="Drop" onclick="dropObject();" />
+</div>
+    <img id="rulerImage" src="images/ruler.png" alt="ruler" >
+</div>
+
+<div id="right-monkey-kit">
+<img src="images/monkey.png" id="rightMonkey" class="monkey" alt="monkey" >    
+<div id="rightFinDestination" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</div>
+
+<div id="right-tool-kit">
+<div id="rightObjects" class="objects" ondrop="drop(event)" ondragover="allowDrop(event)"  >
+<img src="images/football.png" draggable="true" ondragstart="drag(event)"  id="foot-ball-right" width="50" height="50">
+<img src="images/feather.png" draggable="true" ondragstart="drag(event)" id="feather-right" width="50" height="50" >
+<img src="images/ironball.png" draggable="true" ondragstart="drag(event)" id="iron-ball-right" width="50" height="50"> 
+<img src="images/golfball.png" draggable="true" ondragstart="drag(event)" id="golf-ball-right" width="50" height="50">
+</div>
+
+<div id="rightDestination" ondrop="drop(event)" ondragover="allowDrop(event)"> </div>   
+<div id="rMachine">
+     <img id="rWeighingMachine" class="machine" src="images/scale.png" alt="rWeighingMachine">
+     <br>
+    <canvas id="canvasRight" class="speed-meters" width="200" height="200"></canvas>
+     <input id="sliderRight" class="slider" type ="range" min ="0" max="500" step ="50" value ="0" onchange="sliderChange(1,value)" />
+</div>
+</div>  
+     
+
+<div id="ground"></div>
+
+
+<div id="tb-data">
+<table cellspacing="0" cellpadding="0" border="0" width="100%" color="blue">
+  <tr>
+    <td>
+       <table id="tableHeader" cellspacing="0" cellpadding="1" border="1" width="100%" >
+         <tr >
+            <th>Object Name</th>
+            <th>Mass(kg)</th>
+            <th>Medium</th>
+            <th>Time taken for the free fall(sec)</th>
+         </tr>
+       </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+       <div style="width:100%; height:110px; overflow:auto;">
+         <table id="table" cellspacing="0" cellpadding="0" border="1" width="100%" >
+         </table>  
+       </div>
+    </td>
+  </tr>
+</table>
+</div>
+    
+</body>
+</div>
+<div id="bubble"></div> 
+</html>
